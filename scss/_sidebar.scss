@@ -1,0 +1,39 @@
+.side-bar{
+  position: fixed;
+  width: 19rem;
+  height: 100%;
+  z-index: 3;
+  top: 5rem;
+  background-color: $primary;
+
+  ul li {
+    padding:  1rem;
+    font-size: 1.1rem;
+    color: $white;
+    border-bottom: 3px solid $secondary;
+    transition: $transition1;
+  }
+
+  .side-bar-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  .feature-link:hover{
+    li{
+      background-color: $secondary;
+      color: $dark-gray;
+      font-weight: bold;
+      transform: scale(1.1);
+      margin-left: 1rem;
+    }
+  }
+
+  .feature-link-active {
+    li {
+      background-color: $secondary;
+      color: $dark-gray;
+      font-weight: bold;
+    }
+  }
+}

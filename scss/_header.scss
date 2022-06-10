@@ -1,0 +1,83 @@
+.navbar{
+  background-color: $primary;
+  color: $white;
+  padding: 1rem 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  box-shadow: 0px 5px 10px rgba($color: #000000, $alpha: .5);
+  z-index: 4;
+  .logo-section {
+    display: flex;
+    align-items: center;
+
+    .project-name {
+      margin-left: 1rem;
+      font-size: 1.5rem;
+      color: $secondary;
+    font-family: $f-secondary;
+    }
+  }
+  .logo{
+    height: 3rem;
+    width: 3rem;
+    position: relative;
+
+    img{
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .admin{
+    font-size: 1.3rem;
+    color: $white;
+    margin-right: 1rem;
+    transition: $transition1;
+  }
+
+  .admin:hover {
+    transform: scale(1.1);
+  }
+
+  .admin-modal {
+    position: absolute;
+    background-color: $white;
+    right: 5rem;
+    top: 3.2rem;
+    border-radius: 5px;
+    width: 10rem;
+    max-width: 10rem;
+    box-shadow: 5px 5px 10px rgba($color: #000000, $alpha: .5);
+    transform: translateY(-125%);
+    opacity: 0;
+    transition: $transition1;
+    pointer-events: none;
+
+    ul li {
+      list-style-type: none;
+      color: $dark-gray;
+      padding: 0.5rem;
+      border-bottom: 1px solid $dark-gray;
+      transition: $transition1;
+    }
+  }
+
+  .admin-modal-open {
+    transform: translateY(0%);
+    opacity: 1;
+    pointer-events: visible;
+  }
+
+  .admin-menu:hover{
+    li{
+      font-weight: bold;
+      color: $white;
+      background-color: $dark-gray;
+    }
+  }
+}
