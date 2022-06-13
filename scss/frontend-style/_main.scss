@@ -1,0 +1,48 @@
+.main-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: $white;
+  position: relative;
+  .hero-image-container{
+    // border: 5px solid red;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 2rem;
+    left: 0rem;
+    overflow: hidden;
+
+    img{
+      width: 120%;
+      height: 150%;
+      margin-left: -20%;
+      margin-top: -20%;
+      opacity: .5;
+    }
+  }
+
+  .main-page-content{
+    width: 100%;
+    // border: 1px solid red;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .psu {
+      font-size: 4rem;
+      color: $primary;
+      text-shadow: 5px 5px 10px $secondary;
+      margin-bottom: 1rem;
+      font-family: $f-psu;
+      letter-spacing: 1px;
+    }
+
+    .welcome{
+      font-size: 1.5rem;
+      color: $primary;
+      text-shadow: 5px 5px 10px $secondary;
+    }
+  }
+}

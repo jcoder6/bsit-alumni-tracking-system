@@ -53,7 +53,7 @@
           <input type="password" name="password" placeholder="Password" class="password" />
         </div>
 
-        <input type="hidden" name="user-type" value="0">;
+        <input type="hidden" name="user-type" value="0">
         <input type="submit" name="submit" class="submitbtn" value="Log in">
       </form>
     </div>
