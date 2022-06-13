@@ -128,6 +128,7 @@ a {
   height: 100vh;
   background-color: #FFFFFF;
   position: relative;
+  margin-bottom: 2rem;
 }
 
 .main-page .hero-image-container {
@@ -168,6 +169,184 @@ a {
 .main-page .main-page-content .welcome {
   font-size: 1.5rem;
   color: #337ED3;
-  text-shadow: 5px 5px 10px #FFDD00;
+  text-shadow: 3px 3px 10px #FFFFFF;
+}
+
+.footer {
+  background-color: #337ED3;
+  padding: 3rem;
+  text-align: center;
+}
+
+.footer .logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer .logo-section .project-name {
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  font-family: "Charis SIL", serif;
+}
+
+.footer .logo {
+  height: 5rem;
+  width: 5rem;
+  position: relative;
+  border-radius: 50%;
+}
+
+.footer .logo img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.footer p {
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer .contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.footer .contacts .contact li {
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  list-style-type: none;
+  transition: all 250ms ease-in-out;
+}
+
+.footer .contacts .contact:hover li {
+  color: #FFDD00;
+}
+
+.content-container {
+  padding: 3rem 7rem;
+  text-align: center;
+  background: #ffdd00;
+  background: linear-gradient(313deg, rgba(255, 221, 0, 0.700718) 0%, rgba(51, 126, 211, 0.9052) 100%);
+}
+
+.content-container .content-title {
+  font-size: 1.8rem;
+  color: #337ED3;
+  text-shadow: 3px 3px 10px #FFFFFF;
+  margin-bottom: 2rem;
+}
+
+.content-container .event-container {
+  display: flex;
+  width: 100%;
+  position: relative;
+  max-width: 80rem;
+  margin: 3rem auto;
+}
+
+.content-container .event-container .event-photo {
+  width: 45%;
+  height: 25rem;
+}
+
+.content-container .event-container .event-photo img {
+  width: 100%;
+  height: 100%;
+}
+
+.content-container .event-container .event-detail-container {
+  width: 55%;
+  padding: 2rem;
+  position: relative;
+}
+
+.content-container .event-container .event-detail-container .event-detail-bg-photo {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: .7;
+}
+
+.content-container .event-container .event-detail-container .event-detail-bg-photo img {
+  width: 100%;
+  height: 100%;
+}
+
+.content-container .event-container .event-detail-container .white-overlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFFFFF;
+}
+
+.content-container .event-container .event-detail-container .detail-container {
+  position: absolute;
+  z-index: 3;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.content-container .event-container .event-detail-container .detail-container .event-title {
+  color: #FFFFFF;
+  text-shadow: 5px 5px 10px #337ED3, -1px -1px 0px #337ED3, 0px -1px 0px #337ED3, 1px -1px 0px #337ED3, -1px 0px 0px #337ED3, 1px 0px 0px #337ED3, -1px 1px 0px #337ED3, 0px 1px 0px #337ED3, 1px 1px 0px #337ED3;
+  margin-bottom: .5rem;
+}
+
+.content-container .event-container .event-detail-container .detail-container .event-date {
+  font-weight: bold;
+  color: #FFFFFF;
+  text-shadow: 5px 5px 10px #337ED3, -1px -1px 0px #337ED3, 0px -1px 0px #337ED3, 1px -1px 0px #337ED3, -1px 0px 0px #337ED3, 1px 0px 0px #337ED3, -1px 1px 0px #337ED3, 0px 1px 0px #337ED3, 1px 1px 0px #337ED3;
+  margin-bottom: 1.5rem;
+}
+
+.content-container .event-container .event-detail-container .detail-container .event-date .calen {
+  margin-right: .5rem;
+  font-size: 1.3rem;
+  color: #FFFFFF;
+}
+
+.content-container .event-container .event-detail-container .detail-container .event-desc {
+  text-align: left;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  padding: .5rem;
+}
+
+.content-container .event-container .event-detail-container .detail-container .read-more {
+  margin-left: auto;
+}
+
+.content-container .event-container .event-detail-container .detail-container .read-more:hover button {
+  color: #337ED3;
+  background-color: #FFFFFF;
+}
+
+.content-container .event-container .event-detail-container .detail-container .read-more button {
+  padding: .3rem 1.5rem;
+  background-color: #337ED3;
+  color: #FFFFFF;
+  border: 2px solid #337ED3;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: all 250ms ease-in-out;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,62 +1,99 @@
-<?php include('./config/constants.php') ?>
-<!DOCTYPE html>
-<html lang="en">
+<?php include('./front-partials/header.php') ?>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Charis+SIL:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Charis+SIL:wght@400;700&family=Josefin+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="//db.onlinewebfonts.com/c/f3258385782c4c96aa24fe8b5d5f9782?family=Old+English+Text+MT" rel="stylesheet" type="text/css" />
-  <link rel="stylesheet" href="./scss/frontend-style/style/css/style.css">
-  <link rel="stylesheet" href="./assets/css/all.css">
+<section class="content-container">
+  <div class="events">
+    <h3 class="content-title">Upcoming Events</h3>
+  </div>
 
-  <title><?= PROJECT_NAME ?></title>
-</head>
+  <!-- EVENT 1 -->
+  <div class="event-container">
+    <div class="event-photo">
+      <img src="./assets/images/events1.jpg" alt="Events 1">
+    </div>
 
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="logo-section">
-        <div class="logo">
-          <img src="./assets/images/Logo Psu.PNG" alt="LOGO">
-        </div>
-        <span class="project-name">BSIT Alumni Tracking Management System</span>
+    <div class="event-detail-container">
+      <div class="white-overlay"></div>
+      <div class="event-detail-bg-photo">
+        <img src="./assets/images/detatailBg.PNG" alt="Detail BG photo">
       </div>
 
-      <ul class="menu-links">
-        <a href="#" class="menu-link">
-          <li>Home</li>
-        </a>
-        <a href="#" class="menu-link">
-          <li>Alumni</li>
-        </a>
-        <a href="#" class="menu-link">
-          <li>Gallery</li>
-        </a>
-        <a href="#" class="menu-link">
-          <li>About</li>
-        </a>
-        <a href="#" class="menu-link">
-          <li>Log in</li>
-        </a>
-      </ul>
-    </nav>
-  </header>
 
+      <div class="detail-container">
+        <h2 class="event-title">Face-To-Face Classes</h2>
+        <p class="event-date"><span class="calen"><i class="fa-solid fa-calendar"></i></span> April 25, 2022</p>
+        <p class="event-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id reprehenderit libero, laudantium quo eveniet ea deserunt nulla est voluptate. Aut obcaecati dolor nesciunt laboriosam sint nostrum veritatis cupiditate qui suscipit nisi, ab, quibusdam quidem enim, quo hic quisquam accusamus totam est similique culpa ea possimus? Ex reiciendis blanditiis ab provident.</p>
+        <a class="read-more" href="#"><button>Read more</button></a>
+      </div>
+    </div>
+  </div>
 
-  <section class="main-page">
-    <div class="hero-image-container">
-      <img src="./assets/images/main page photo.jpg" alt="MAIN PAGE PHOTO">
+  <!-- EVENT 2 -->
+  <div class="event-container">
+    <div class="event-photo">
+      <img src="./assets/images/event2.jpg" alt="Events 2">
     </div>
 
-    <div class="main-page-content">
-      <h1 class="psu">Pangasinan State University</h1>
-      <h3 class="welcome">Welcome to BSIT Alumni Trackin Management System</h3>
+    <div class="event-detail-container">
+      <div class="white-overlay"></div>
+      <div class="event-detail-bg-photo">
+        <img src="./assets/images/detatailBg.PNG" alt="Detail BG photo">
+      </div>
+
+
+      <div class="detail-container">
+        <h2 class="event-title">Mr. & Ms. PSU Bayambang Centennial</h2>
+        <p class="event-date"><span class="calen"><i class="fa-solid fa-calendar"></i></span> March 29, 2022</p>
+        <p class="event-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id reprehenderit libero, laudantium quo eveniet ea deserunt nulla est voluptate. Aut obcaecati dolor nesciunt laboriosam sint nostrum veritatis cupiditate qui suscipit nisi, ab, quibusdam quidem enim, quo hic quisquam accusamus totam est similique culpa ea possimus? Ex reiciendis blanditiis ab provident.</p>
+        <a class="read-more" href="#"><button>Read more</button></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENT 3 -->
+  <div class="event-container">
+    <div class="event-photo">
+      <img src="./assets/images/event3.jpg" alt="Events 3">
     </div>
 
-  </section>
-</body>
+    <div class="event-detail-container">
+      <div class="white-overlay"></div>
+      <div class="event-detail-bg-photo">
+        <img src="./assets/images/detatailBg.PNG" alt="Detail BG photo">
+      </div>
 
-</html>
+
+      <div class="detail-container">
+        <h2 class="event-title">12th Anniversary Celebration</h2>
+        <p class="event-date"><span class="calen"><i class="fa-solid fa-calendar"></i></span> June 06, 2022</p>
+        <p class="event-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id reprehenderit libero, laudantium quo eveniet ea deserunt nulla est voluptate. Aut obcaecati dolor nesciunt laboriosam sint nostrum veritatis cupiditate qui suscipit nisi, ab, quibusdam quidem enim, quo hic quisquam accusamus totam est similique culpa ea possimus? Ex reiciendis blanditiis ab provident.</p>
+        <a class="read-more" href="#"><button>Read more</button></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVENT 4 -->
+
+  <div class="event-container">
+    <div class="event-photo">
+      <img src="./assets/images/event4.png" alt="Events 4">
+    </div>
+
+    <div class="event-detail-container">
+      <div class="white-overlay"></div>
+      <div class="event-detail-bg-photo">
+        <img src="./assets/images/detatailBg.PNG" alt="Detail BG photo">
+      </div>
+
+
+      <div class="detail-container">
+        <h2 class="event-title">Heart Awareness Month</h2>
+        <p class="event-date"><span class="calen"><i class="fa-solid fa-calendar"></i></span>Feburary 18, 2022</p>
+        <p class="event-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id reprehenderit libero, laudantium quo eveniet ea deserunt nulla est voluptate. Aut obcaecati dolor nesciunt laboriosam sint nostrum veritatis cupiditate qui suscipit nisi, ab, quibusdam quidem enim, quo hic quisquam accusamus totam est similique culpa ea possimus? Ex reiciendis blanditiis ab provident.</p>
+        <a class="read-more" href="#"><button>Read more</button></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<?php include('./front-partials/footer.php') ?>

@@ -3,6 +3,7 @@
   height: 100vh;
   background-color: $white;
   position: relative;
+  margin-bottom: 2rem;
   .hero-image-container{
     // border: 5px solid red;
     position: absolute;
@@ -42,7 +43,7 @@
     .welcome{
       font-size: 1.5rem;
       color: $primary;
-      text-shadow: 5px 5px 10px $secondary;
+      text-shadow: 3px 3px 10px $white;
     }
   }
 }
