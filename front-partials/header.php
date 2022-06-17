@@ -38,14 +38,21 @@
         <a href="#" class="menu-link">
           <li>About</li>
         </a>
-        <a href="#" class="menu-link">
+        <a href="#" class="menu-link login-link">
           <li>Log in</li>
         </a>
       </ul>
     </nav>
   </header>
+  <!-- LOG IN MODAL -->
+  <section class="login-modal-container">
+    <?php include('./log-in.php'); ?>
+  </section>
 
-
+  REGISTRATION MODAL
+  <section class="registration-modal-container">
+    <?php include('./register.php'); ?>
+  </section>
   <section class="main-page">
     <div class="hero-image-container">
       <img src="./assets/images/main page photo.jpg" alt="MAIN PAGE PHOTO">
