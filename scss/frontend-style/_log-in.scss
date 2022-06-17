@@ -1,0 +1,96 @@
+
+.login-modal-container{
+  position: fixed;
+  z-index: -10;
+  opacity: 0;
+  inset: 0;
+  background-color: rgba($color: #ffffff, $alpha: .2);
+  width: 100vw;
+  height: 100vh;
+
+  .login-container{
+    padding: .5rem 1rem;
+    background-color: $white;
+    border-radius: 20px;
+    box-shadow: 5px -5px 15px rgba($color: #000000, $alpha: .3);
+    width: 30vw;
+    height: 70vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .login-head{
+      padding: .5rem;
+      border-bottom: 1px solid $primary;
+      margin-bottom: 1rem;
+      .logo-container{
+        height: 6rem;
+        width: 6rem;
+        border-radius: 50%;
+        position: relative;
+        margin: 0 auto;
+
+        img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+        }
+      }
+
+      h3{
+        text-align: center;
+        font-family: $f-secondary;
+        line-height: 2;
+      }
+
+      h4{
+        font-size: 1rem;
+        color: $primary;
+        text-align: center;
+        font-weight: 400;
+      }
+    }
+
+    .login-form{
+      padding: 0 3rem;
+      display: flex;
+      flex-direction: column;
+      .label-name{
+        font-size: 1rem;
+      }
+
+      .form-groups{
+        margin-bottom: 1rem;
+      }
+
+      .login-btn{
+        margin: 1rem 0;
+      }
+
+      span > a {
+        color: $primary;
+      }
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      font-size: 1.5rem;
+      color: rgba($color: $dark-gray, $alpha: .5);
+      transition: $transition1;
+      cursor: pointer;
+
+      &:hover{
+        font-weight: bold;
+        color: $dark-gray;
+      }
+    }
+  }
+}
+
+login-modal-open{
+  z-index: 10;
+  opacity: 1;
+}
