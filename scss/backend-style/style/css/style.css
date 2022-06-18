@@ -45,6 +45,10 @@ h3 {
   color: #337ED3;
 }
 
+ul > a > li {
+  list-style-type: none;
+}
+
 .feature {
   position: relative;
   width: 100%;
@@ -58,6 +62,22 @@ h3 {
   right: 2rem;
   display: flex;
   justify-content: center;
+}
+
+.content-container {
+  padding: 3rem 7rem;
+  background: linear-gradient(313deg, rgba(255, 221, 0, 0.700718) 0%, rgba(51, 126, 211, 0.9052) 100%);
+}
+
+.content-container .content-title {
+  font-size: 2rem;
+  color: #337ED3;
+  text-shadow: 3px 3px 10px #FFFFFF;
+  margin-bottom: 2rem;
+  border-bottom: 5px solid #FFDD00;
+  width: 30%;
+  text-align: center;
+  margin: 0 auto 2rem;
 }
 
 .section-name {
@@ -139,6 +159,22 @@ h3 {
   padding: .3rem;
   font-size: .9rem;
   border: 2px solid #CECECE;
+}
+
+.not-home {
+  height: 72;
+}
+
+.not-home .hero-image-container {
+  top: 4rem;
+}
+
+.not-home .psu {
+  font-size: 2rem;
+}
+
+.not-home .welcome {
+  font-size: 1.5rem;
 }
 
 .navbar {

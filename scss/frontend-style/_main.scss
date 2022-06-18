@@ -47,3 +47,22 @@
     }
   }
 }
+
+.not-home {
+  height: 72vh;
+
+  .hero-image-container{
+    top: 4rem;
+  }
+
+  .main-page-content {
+    .psu {
+      font-size: 3rem;
+      margin-bottom: 0;
+    }
+  
+    .welcome {
+      font-size: 1rem;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "developers": [
+    {
+      "name" : "Jomer Dorego",
+      "img" : "./assets/images/devs/jomer.webp",
+      "links" : ["#", "#", "#"]
+    },
+
+    {
+      "name" : "Shekina Cayago",
+      "img" : "./assets/images/devs/shek.webp",
+      "links" : ["#", "#", "#"]
+    },
+
+    {
+      "name" : "Ivan Deguzman",
+      "img" : "./assets/images/devs/ivan.webp",
+      "links" : ["#", "#", "#"]
+    },
+
+    {
+      "name" : "Lester Taguiam",
+      "img" : "./assets/images/devs/lest.webp",
+      "links" : ["#", "#", "#"]
+    }
+  ]
+}

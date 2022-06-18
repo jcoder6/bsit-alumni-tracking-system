@@ -26,16 +26,16 @@
       </div>
 
       <ul class="menu-links">
-        <a href="#" class="menu-link">
+        <a href="<?= ROOT_URL ?>index.php?page=events" class="menu-link home-link">
           <li>Home</li>
         </a>
-        <a href="#" class="menu-link">
+        <a href="<?= ROOT_URL ?>index.php?page=alumni" class="menu-link alumni-link">
           <li>Alumni</li>
         </a>
-        <a href="#" class="menu-link">
+        <a href="<?= ROOT_URL ?>index.php?page=gallery" class="menu-link gallery-link">
           <li>Gallery</li>
         </a>
-        <a href="#" class="menu-link">
+        <a href="<?= ROOT_URL ?>index.php?page=about" class="menu-link about-link">
           <li>About</li>
         </a>
         <a href="#" class="menu-link login-link">
@@ -53,6 +53,7 @@
   <section class="registration-modal-container">
     <?php include('./register.php'); ?>
   </section>
+
   <section class="main-page">
     <div class="hero-image-container">
       <img src="./assets/images/main page photo.jpg" alt="MAIN PAGE PHOTO">

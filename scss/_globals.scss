@@ -45,6 +45,10 @@ h3{
   color: $primary;
 }
 
+ul > a > li {
+  list-style-type: none;
+}
+
 .feature {
   position: relative;
   width: 100%;
@@ -60,6 +64,22 @@ h3{
   display: flex;
   justify-content: center;
 }
+.content-container{
+  padding: 3rem 7rem;
+  background: linear-gradient(313deg, rgba(255,221,0,0.700717787114846) 0%, rgba(51,126,211,0.9051995798319328) 100%);
+  
+  .content-title {
+    font-size: 2rem;
+    color: $primary;
+    text-shadow: 3px 3px 10px $white;
+    margin-bottom: 2rem;
+    border-bottom: 5px solid $secondary;
+    width: 30%;
+    text-align: center;
+    margin: 0 auto 2rem;
+  }
+}
+
 
 .section-name {
   font-size: 2rem;
@@ -139,5 +159,21 @@ h3{
     padding: .3rem;
     font-size: .9rem;
     border: 2px solid $light-gray;
+  }
+}
+
+.not-home {
+  height: 72;
+
+  .hero-image-container{
+    top: 4rem;
+  }
+
+  .psu {
+    font-size: 2rem;
+  }
+
+  .welcome {
+    font-size: 1.5rem;
   }
 }
