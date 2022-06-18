@@ -1,3 +1,29 @@
+<?php
+// unset($_POST['login']);
+if (isset($_POST['login'])) {
+  $usernameLog = mysqli_real_escape_string($conn, $_POST['username']);
+  $passwordLog = mysqli_real_escape_string($conn, $_POST['password']);
+  $userTypeLog = mysqli_real_escape_string($conn, $_POST['user-type']);
+
+  echo $usernameLog . $passwordLog . $userTypeLog;
+
+  $query = "SELECT * FROM users WHERE category = ? AND username = ? AND password = ?";
+  $stmtLog = $pdo->prepare($query);
+  $stmtLog->execute([$userTypeLog, $usernameLog, $passwordLog]);
+  $resLog = $stmtLog->fetchObject();
+
+  var_dump($resLog);
+
+  if ($resLog == false) {
+    messageNotif('error', 'Incorrect username or password');
+    header('location: ' . ROOT_URL);
+  } else {
+    $_SESSION['user-logged'] = $resLog->username;
+    messageNotif('success', 'Log in successfuly');
+    header('location: ' . ROOT_URL);
+  }
+}
+?>
 <div class="login-container">
   <div class="close-btn"><i class="fa-solid fa-xmark"></i></div>
   <div class="login-head">
@@ -22,7 +48,8 @@
       </div>
     </div>
 
-    <p>Not yet <span><a href="#" class="ca-link">Register</a></span>?</p>
-    <input type="submit" value="Log in" class="button2 login-btn">
+    <p>Not yet <span><a href="" class="ca-link">Register</a></span>?</p>
+    <input type="hidden" name="user-type" value="1">
+    <input type="submit" name="login" value="Log in" class="button2 login-btn">
   </form>
 </div>

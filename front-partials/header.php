@@ -1,4 +1,6 @@
 <?php include('./config/constants.php') ?>
+<?php include('./config/db_connect.php') ?>
+<?php include('./admin/inc/message.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +18,7 @@
 </head>
 
 <body <?php if (isset($_GET['id'])) { ?> class="scroll-lock" <?php } ?>>
+  <?php showMessage(); ?>
   <header>
     <nav class="navbar">
       <div class="logo-section">
@@ -38,9 +41,22 @@
         <a href="<?= ROOT_URL ?>index.php?page=about" class="menu-link about-link">
           <li>About</li>
         </a>
-        <a href="#" class="menu-link login-link">
-          <li>Log in</li>
-        </a>
+        <?php
+        if (isset($_SESSION['user-logged'])) {
+        ?>
+          <a href="user-page.php" class="menu-link">
+            <li><?= $_SESSION['user-logged'] ?></li>
+          </a>
+        <?php
+        } else {
+        ?>
+          <a href="#" class="menu-link login-link">
+            <li>Log in</li>
+          </a>
+        <?php
+        }
+        ?>
+
       </ul>
     </nav>
   </header>

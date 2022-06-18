@@ -1,4 +1,5 @@
 <?php include('./front-partials/header.php'); ?>
+<?php include('./front-partials/restrict.php'); ?>
 <div class="user-sidebar">
   <div class="user-img-container">
     <img src="./assets/images/devs/jomer.webp" alt="USER IMAGE">
@@ -9,7 +10,7 @@
   </h3>
 
   <a href="#"><button class="button2 user-sidebar-btn">Manage Account</button></a>
-  <a href="#"><button class="button2 user-sidebar-btn">Log out</button></a>
+  <a href="<?= ROOT_URL ?>log-out.php"><button class="button2 user-sidebar-btn">Log out</button></a>
 </div>
 
 <div class="user-info-container">
