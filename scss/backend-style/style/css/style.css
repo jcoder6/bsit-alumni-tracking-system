@@ -144,6 +144,22 @@ ul > a > li {
   color: #FFFFFF;
 }
 
+.button3 {
+  padding: .5rem 2.5rem;
+  background-color: #fff29a;
+  color: #3d3d3d;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #FFDD00;
+  transition: all 250ms ease-in-out;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button3:hover {
+  background-color: #FFDD00;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -175,6 +191,21 @@ ul > a > li {
 
 .not-home .welcome {
   font-size: 1.5rem;
+}
+
+.infor {
+  display: flex;
+  margin-bottom: 1.3rem;
+}
+
+.infor .key {
+  width: 35%;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.infor .value {
+  width: 65%;
 }
 
 .navbar {

@@ -144,6 +144,22 @@ ul > a > li {
   color: #FFFFFF;
 }
 
+.button3 {
+  padding: .5rem 2.5rem;
+  background-color: #fff29a;
+  color: #3d3d3d;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid #FFDD00;
+  transition: all 250ms ease-in-out;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.button3:hover {
+  background-color: #FFDD00;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -175,6 +191,21 @@ ul > a > li {
 
 .not-home .welcome {
   font-size: 1.5rem;
+}
+
+.infor {
+  display: flex;
+  margin-bottom: 1.3rem;
+}
+
+.infor .key {
+  width: 35%;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.infor .value {
+  width: 65%;
 }
 
 .navbar {
@@ -983,12 +1014,13 @@ login-modal-open {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem 1rem;
+  justify-content: space-between;
 }
 
 .alumni-container .alumnae .alumni {
   background-color: #FFFFFF;
   display: flex;
-  width: 45%;
+  width: 49%;
   min-height: 18rem;
   border-radius: 20px;
   overflow: hidden;
@@ -1042,18 +1074,83 @@ login-modal-open {
   margin-left: 1rem;
 }
 
-.alumni-container .alumnae .alumni .basic-info-container .alumni-info-container .infor {
+.user-sidebar {
+  height: 100vh;
+  width: 30vw;
+  position: fixed;
+  background-color: rgba(255, 221, 0, 0.5);
   display: flex;
-  margin-bottom: 1.3rem;
+  flex-direction: column;
+  padding: 9rem 1rem 5rem;
+  align-items: center;
 }
 
-.alumni-container .alumnae .alumni .basic-info-container .alumni-info-container .infor .key {
-  width: 35%;
-  font-size: 1rem;
-  font-weight: 300;
+.user-sidebar .user-img-container {
+  height: 17rem;
+  width: 17rem;
+  position: relative;
+  margin-bottom: 2rem;
 }
 
-.alumni-container .alumnae .alumni .basic-info-container .alumni-info-container .infor .value {
-  width: 65%;
+.user-sidebar .user-img-container img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.user-sidebar .user-fullname {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #3d3d3d;
+}
+
+.user-sidebar a {
+  align-self: stretch;
+  padding: 0 4rem;
+}
+
+.user-sidebar .user-sidebar-btn {
+  align-self: stretch;
+  width: 100%;
+  margin-bottom: .5rem;
+}
+
+.user-info-container {
+  position: absolute;
+  top: 5rem;
+  left: 30vw;
+  right: 0;
+  background-color: rgba(51, 126, 211, 0.7);
+}
+
+.user-info-container .user-info {
+  padding: 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 3px solid #FFDD00;
+}
+
+.user-info-container .info-title {
+  color: #FFFFFF;
+  font-size: 2rem;
+  font-family: "Charis SIL", serif;
+  text-align: center;
+}
+
+.user-info-container .user-info-content {
+  font-size: 1.2rem;
+  margin: 2rem 0 2rem 4rem;
+  color: #FFFFFF;
+}
+
+.user-info-container .user-info-content .infor {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+.user-info-container a {
+  align-self: flex-end;
+  margin-right: 4rem;
 }
 /*# sourceMappingURL=style.css.map */

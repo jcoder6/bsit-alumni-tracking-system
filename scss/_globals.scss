@@ -145,6 +145,24 @@ ul > a > li {
   }
 }
 
+.button3{
+  padding: .5rem 2.5rem;
+  // background: $white;
+  background-color: #fff29a;
+  color: $dark-gray;
+  border: none;
+  border-radius: 5px;
+  border: 1px solid $secondary;
+  transition: all 250ms ease-in-out;
+  font-weight: bold;
+  cursor: pointer;
+
+  &:hover{
+    background-color: $secondary;
+    // color: $white;
+  }
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -175,5 +193,19 @@ ul > a > li {
 
   .welcome {
     font-size: 1.5rem;
+  }
+}
+
+.infor{
+  display: flex;
+  margin-bottom: 1.3rem;
+  .key{
+    width: 35%;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  .value {
+    width: 65%;
   }
 }

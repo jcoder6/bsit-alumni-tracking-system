@@ -1,5 +1,5 @@
 <?php include('./front-partials/header.php') ?>
-
+<?php include('./front-partials/main-page.php'); ?>
 <section class="content-container">
   <?php
   if (isset($_GET['page'])) {
