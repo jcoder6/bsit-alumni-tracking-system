@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <p>Not yet <span><a href="#" class="register-link">Register</a></span>?</p>
+    <p>Not yet <span><a href="#" class="ca-link">Register</a></span>?</p>
     <input type="submit" value="Log in" class="button2 login-btn">
   </form>
 </div>

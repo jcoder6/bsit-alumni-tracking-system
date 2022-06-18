@@ -1,4 +1,4 @@
-// console.log('hello world');
+console.log('hello world');
 
 /* ======================================
     lOGIN AND REGISTER MODALS SCRIPTS
@@ -7,25 +7,34 @@ const body = document.querySelector('body');
 const logIn = document.querySelector('.login-link');
 const logInModalContainer = document.querySelector('.login-modal-container');
 const closeBtn = document.querySelector('.close-btn');
+const caCloseBtn = document.querySelector('.ca-close-btn');
 const regCloseBtn = document.querySelector('.reg-close-btn');
 const registerLink = document.querySelector('.register-link');
+const caLink = document.querySelector('.ca-link');
 const registerModalContainer = document.querySelector('.registration-modal-container');
+const createAcctModalContainer = document.querySelector('.createAcct-modal-container');
 
 logIn.addEventListener('click', () => {
   addModal(logInModalContainer);
+})
+
+caLink.addEventListener('click', () => {
+  removeModal(logInModalContainer);
+  addModal(createAcctModalContainer);
 })
 
 closeBtn.addEventListener('click', () => {
   removeModal(logInModalContainer);
 })
 
-registerLink.addEventListener('click', () => {
-  removeModal(logInModalContainer);
-  addModal(registerModalContainer);
+regCloseBtn.addEventListener('click', () => {
+  console.log('tfdsfdseg');
+  removeModal(registerModalContainer);
 })
 
-regCloseBtn.addEventListener('click', () => {
-  removeModal(registerModalContainer);
+caCloseBtn.addEventListener('click', () => {
+  console.log('tfdsfdseg');
+  removeModal(createAcctModalContainer);
 })
 
 

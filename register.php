@@ -137,28 +137,6 @@
           </select>
         </div>
       </div>
-    </form>
-
-    <form action="" method="post" class="acct-info">
-      <h4 class="form-title">Registration Account</h4>
-      <div class="form-groups">
-        <div class="form-group username">
-          <label class="label-name" for="username">Username</label>
-          <input type="text" name="username" class="input username-input" placeholder="Username">
-        </div>
-      </div>
-      <div class="form-groups">
-        <div class="form-group password">
-          <label class="label-name" for="password">Password</label>
-          <input type="password" name="password" class="input password-input" placeholder="Password">
-        </div>
-      </div>
-      <div class="form-groups">
-        <div class="form-group cpassword">
-          <label class="label-name" for="cpassword">Confirm Password</label>
-          <input type="password" name="cpassword" class="input password-input" placeholder="Confirm Password">
-        </div>
-      </div>
 
       <input type="button" value="Register" class="button1 register-btn">
     </form>

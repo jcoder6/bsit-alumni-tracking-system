@@ -15,7 +15,7 @@
   <title><?= PROJECT_NAME ?></title>
 </head>
 
-<body>
+<body <?php if (isset($_GET['id'])) { ?> class="scroll-lock" <?php } ?>>
   <header>
     <nav class="navbar">
       <div class="logo-section">
@@ -49,7 +49,24 @@
     <?php include('./log-in.php'); ?>
   </section>
 
-  REGISTRATION MODAL
-  <section class="registration-modal-container">
-    <?php include('./register.php'); ?>
+  <!-- REGISTRATION MODAL -->
+  <?php
+  if (isset($_GET['id'])) {
+  ?>
+    <section class="registration-modal-container" style="opacity: 1; z-index: 10;">
+      <?php include('./register.php'); ?>
+    </section>
+  <?php
+  } else {
+  ?>
+    <section class="registration-modal-container">
+      <?php include('./register.php'); ?>
+    </section>
+  <?php
+  }
+  ?>
+
+  <!-- CREATE ACCOUNT MODAL -->
+  <section class="createAcct-modal-container">
+    <?php include('./create-account.php'); ?>
   </section>

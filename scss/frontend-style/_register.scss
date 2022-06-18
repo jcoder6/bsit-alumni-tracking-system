@@ -1,4 +1,4 @@
-.registration-modal-container{
+.registration-modal-container, .createAcct-modal-container{
   position: fixed;
   inset: 0;
   background-color: rgba($color: $white, $alpha: .4);
@@ -42,7 +42,7 @@
       }
     }
 
-    .reg-close-btn {
+    .reg-close-btn, .ca-close-btn {
       position: absolute;
       top: 1rem;
       right: 1.5rem;
@@ -108,7 +108,7 @@
         // border: 1px solid blue;  
       }
       
-      .bio-info{
+      .bio-info, .acct-info{
         margin-top: 8rem;
       }
   
@@ -210,6 +210,11 @@
       }
   
       .register-btn{
+        margin: 2rem 0;
+        align-self: flex-end;
+      }
+
+      a{
         margin: 2rem 0;
         align-self: flex-end;
       }

@@ -498,7 +498,7 @@ ul > a > li {
   transition: all 250ms ease-in-out;
 }
 
-.registration-modal-container {
+.registration-modal-container, .createAcct-modal-container {
   position: fixed;
   inset: 0;
   background-color: rgba(255, 255, 255, 0.4);
@@ -506,7 +506,7 @@ ul > a > li {
   opacity: 0;
 }
 
-.registration-modal-container .registration-head {
+.registration-modal-container .registration-head, .createAcct-modal-container .registration-head {
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -524,28 +524,28 @@ ul > a > li {
   border-radius: 20px 0 0 0;
 }
 
-.registration-modal-container .registration-head .logo-container {
+.registration-modal-container .registration-head .logo-container, .createAcct-modal-container .registration-head .logo-container {
   height: 6rem;
   width: 6rem;
   position: relative;
 }
 
-.registration-modal-container .registration-head .logo-container img {
+.registration-modal-container .registration-head .logo-container img, .createAcct-modal-container .registration-head .logo-container img {
   position: absolute;
   inset: 0;
   width: 100%;
 }
 
-.registration-modal-container .registration-head .regis-head-content {
+.registration-modal-container .registration-head .regis-head-content, .createAcct-modal-container .registration-head .regis-head-content {
   color: #337ED3;
 }
 
-.registration-modal-container .registration-head .regis-head-content .registration-title {
+.registration-modal-container .registration-head .regis-head-content .registration-title, .createAcct-modal-container .registration-head .regis-head-content .registration-title {
   font-size: 1.7rem;
   line-height: 1.5;
 }
 
-.registration-modal-container .registration-head .reg-close-btn {
+.registration-modal-container .registration-head .reg-close-btn, .registration-modal-container .registration-head .ca-close-btn, .createAcct-modal-container .registration-head .reg-close-btn, .createAcct-modal-container .registration-head .ca-close-btn {
   position: absolute;
   top: 1rem;
   right: 1.5rem;
@@ -555,12 +555,12 @@ ul > a > li {
   cursor: pointer;
 }
 
-.registration-modal-container .registration-head .reg-close-btn:hover {
+.registration-modal-container .registration-head .reg-close-btn:hover, .registration-modal-container .registration-head .ca-close-btn:hover, .createAcct-modal-container .registration-head .reg-close-btn:hover, .createAcct-modal-container .registration-head .ca-close-btn:hover {
   font-weight: bold;
   color: #3d3d3d;
 }
 
-.registration-modal-container .register-form-container {
+.registration-modal-container .register-form-container, .createAcct-modal-container .register-form-container {
   height: 80vh;
   width: 55vw;
   padding: 1rem;
@@ -574,32 +574,32 @@ ul > a > li {
   overflow-y: scroll;
 }
 
-.registration-modal-container .register-form-container::-webkit-scrollbar {
+.registration-modal-container .register-form-container::-webkit-scrollbar, .createAcct-modal-container .register-form-container::-webkit-scrollbar {
   width: 5px;
 }
 
-.registration-modal-container .register-form-container::-webkit-scrollbar-track {
+.registration-modal-container .register-form-container::-webkit-scrollbar-track, .createAcct-modal-container .register-form-container::-webkit-scrollbar-track {
   background: rgba(255, 221, 0, 0.5);
 }
 
-.registration-modal-container .register-form-container::-webkit-scrollbar-thumb {
+.registration-modal-container .register-form-container::-webkit-scrollbar-thumb, .createAcct-modal-container .register-form-container::-webkit-scrollbar-thumb {
   background-color: rgba(51, 126, 211, 0.7);
   transition: all 250ms ease-in-out;
 }
 
-.registration-modal-container .register-form-container::-webkit-scrollbar-thumb:hover {
+.registration-modal-container .register-form-container::-webkit-scrollbar-thumb:hover, .createAcct-modal-container .register-form-container::-webkit-scrollbar-thumb:hover {
   background-color: #337ED3;
   transform: scale(1.1);
 }
 
-.registration-modal-container .register-form-container .registration-forms .form-title {
+.registration-modal-container .register-form-container .registration-forms .form-title, .createAcct-modal-container .register-form-container .registration-forms .form-title {
   font-weight: bold;
   font-size: 1.3rem;
   color: #337ED3;
   margin-bottom: 1rem;
 }
 
-.registration-modal-container .register-form-container .registration-forms .bio-info, .registration-modal-container .register-form-container .registration-forms .educ-info, .registration-modal-container .register-form-container .registration-forms .employ-info, .registration-modal-container .register-form-container .registration-forms .acct-info {
+.registration-modal-container .register-form-container .registration-forms .bio-info, .registration-modal-container .register-form-container .registration-forms .educ-info, .registration-modal-container .register-form-container .registration-forms .employ-info, .registration-modal-container .register-form-container .registration-forms .acct-info, .createAcct-modal-container .register-form-container .registration-forms .bio-info, .createAcct-modal-container .register-form-container .registration-forms .educ-info, .createAcct-modal-container .register-form-container .registration-forms .employ-info, .createAcct-modal-container .register-form-container .registration-forms .acct-info {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -608,106 +608,111 @@ ul > a > li {
   padding: 0 1rem;
 }
 
-.registration-modal-container .register-form-container .registration-forms .bio-info {
+.registration-modal-container .register-form-container .registration-forms .bio-info, .registration-modal-container .register-form-container .registration-forms .acct-info, .createAcct-modal-container .register-form-container .registration-forms .bio-info, .createAcct-modal-container .register-form-container .registration-forms .acct-info {
   margin-top: 8rem;
 }
 
-.registration-modal-container .register-form-container .registration-forms .form-groups {
+.registration-modal-container .register-form-container .registration-forms .form-groups, .createAcct-modal-container .register-form-container .registration-forms .form-groups {
   display: flex;
   justify-content: space-between;
   margin-bottom: 1rem;
 }
 
-.registration-modal-container .register-form-container .registration-forms .form-groups .form-group {
+.registration-modal-container .register-form-container .registration-forms .form-groups .form-group, .createAcct-modal-container .register-form-container .registration-forms .form-groups .form-group {
   display: flex;
   flex-direction: column;
 }
 
-.registration-modal-container .register-form-container .registration-forms .form-groups .form-group .label-name {
+.registration-modal-container .register-form-container .registration-forms .form-groups .form-group .label-name, .createAcct-modal-container .register-form-container .registration-forms .form-groups .form-group .label-name {
   font-size: .8rem;
   line-height: 2;
   font-weight: bold;
 }
 
-.registration-modal-container .register-form-container .registration-forms .form-groups .form-group .input {
+.registration-modal-container .register-form-container .registration-forms .form-groups .form-group .input, .createAcct-modal-container .register-form-container .registration-forms .form-groups .form-group .input {
   padding: .3rem;
   font-size: .9rem;
   border: 2px solid #CECECE;
 }
 
-.registration-modal-container .register-form-container .registration-forms .form-groups .name {
+.registration-modal-container .register-form-container .registration-forms .form-groups .name, .createAcct-modal-container .register-form-container .registration-forms .form-groups .name {
   width: 30%;
 }
 
-.registration-modal-container .register-form-container .registration-forms .form-groups .contact {
+.registration-modal-container .register-form-container .registration-forms .form-groups .contact, .createAcct-modal-container .register-form-container .registration-forms .form-groups .contact {
   width: 48%;
 }
 
-.registration-modal-container .register-form-container .registration-forms .form-groups .personal .b-day {
+.registration-modal-container .register-form-container .registration-forms .form-groups .personal .b-day, .createAcct-modal-container .register-form-container .registration-forms .form-groups .personal .b-day {
   padding: .3rem;
   margin-top: 1px;
   border: 2px solid #CECECE;
 }
 
-.registration-modal-container .register-form-container .registration-forms .form-groups .personal .personal-select {
+.registration-modal-container .register-form-container .registration-forms .form-groups .personal .personal-select, .createAcct-modal-container .register-form-container .registration-forms .form-groups .personal .personal-select {
   padding: .3rem;
   font-size: .9rem;
   border: 2px solid #CECECE;
 }
 
-.registration-modal-container .register-form-container .registration-forms .form-groups .personal .personal-select option {
+.registration-modal-container .register-form-container .registration-forms .form-groups .personal .personal-select option, .createAcct-modal-container .register-form-container .registration-forms .form-groups .personal .personal-select option {
   padding: .3rem;
   border-bottom: 1px solid #CECECE;
 }
 
-.registration-modal-container .register-form-container .registration-forms .form-groups .addr2 {
+.registration-modal-container .register-form-container .registration-forms .form-groups .addr2, .createAcct-modal-container .register-form-container .registration-forms .form-groups .addr2 {
   width: 30%;
 }
 
-.registration-modal-container .register-form-container .registration-forms .person {
+.registration-modal-container .register-form-container .registration-forms .person, .createAcct-modal-container .register-form-container .registration-forms .person {
   justify-content: flex-start;
   gap: 3rem;
 }
 
-.registration-modal-container .register-form-container .registration-forms .register-next {
+.registration-modal-container .register-form-container .registration-forms .register-next, .createAcct-modal-container .register-form-container .registration-forms .register-next {
   align-self: flex-end;
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
 
-.registration-modal-container .register-form-container .registration-forms .course {
+.registration-modal-container .register-form-container .registration-forms .course, .createAcct-modal-container .register-form-container .registration-forms .course {
   width: 70%;
 }
 
-.registration-modal-container .register-form-container .registration-forms .course .course-select {
+.registration-modal-container .register-form-container .registration-forms .course .course-select, .createAcct-modal-container .register-form-container .registration-forms .course .course-select {
   padding: .3rem;
   font-size: .9rem;
   border: 2px solid #CECECE;
 }
 
-.registration-modal-container .register-form-container .registration-forms .batch {
+.registration-modal-container .register-form-container .registration-forms .batch, .createAcct-modal-container .register-form-container .registration-forms .batch {
   width: 28%;
 }
 
-.registration-modal-container .register-form-container .registration-forms .company_name, .registration-modal-container .register-form-container .registration-forms .position {
+.registration-modal-container .register-form-container .registration-forms .company_name, .registration-modal-container .register-form-container .registration-forms .position, .createAcct-modal-container .register-form-container .registration-forms .company_name, .createAcct-modal-container .register-form-container .registration-forms .position {
   width: 100%;
 }
 
-.registration-modal-container .register-form-container .registration-forms .salary-range {
+.registration-modal-container .register-form-container .registration-forms .salary-range, .createAcct-modal-container .register-form-container .registration-forms .salary-range {
   width: 45%;
 }
 
-.registration-modal-container .register-form-container .registration-forms .salary-range-select {
+.registration-modal-container .register-form-container .registration-forms .salary-range-select, .createAcct-modal-container .register-form-container .registration-forms .salary-range-select {
   padding: .3rem;
   font-size: .9rem;
   border: 2px solid #CECECE;
 }
 
-.registration-modal-container .register-form-container .registration-forms .username, .registration-modal-container .register-form-container .registration-forms .password, .registration-modal-container .register-form-container .registration-forms .cpassword {
+.registration-modal-container .register-form-container .registration-forms .username, .registration-modal-container .register-form-container .registration-forms .password, .registration-modal-container .register-form-container .registration-forms .cpassword, .createAcct-modal-container .register-form-container .registration-forms .username, .createAcct-modal-container .register-form-container .registration-forms .password, .createAcct-modal-container .register-form-container .registration-forms .cpassword {
   width: 50%;
 }
 
-.registration-modal-container .register-form-container .registration-forms .register-btn {
+.registration-modal-container .register-form-container .registration-forms .register-btn, .createAcct-modal-container .register-form-container .registration-forms .register-btn {
+  margin: 2rem 0;
+  align-self: flex-end;
+}
+
+.registration-modal-container .register-form-container .registration-forms a, .createAcct-modal-container .register-form-container .registration-forms a {
   margin: 2rem 0;
   align-self: flex-end;
 }

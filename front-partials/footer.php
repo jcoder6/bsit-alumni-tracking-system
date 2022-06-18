@@ -26,7 +26,7 @@
   <p>All Rights Reserve</p>
 </footer>
 
-<script src="<?php ROOT_URL ?>script/alumnis.js"></script>
+<script src="<?php ROOT_URL ?>script/alumni.js"></script>
 </body>
 
 </html>
