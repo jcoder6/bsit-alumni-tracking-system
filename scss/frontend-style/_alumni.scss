@@ -1,0 +1,79 @@
+.alumni-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  .alumnae{
+    // background-color: $white;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem 1rem;
+    .alumni{
+      background-color: $white;
+      display: flex;
+      width: 45%;
+      min-height: 18rem;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 5px 5px 10px rgba($color: #000000, $alpha: .3);
+      .photo-name-container {
+        background-color: rgba($color: $secondary, $alpha: .5);
+        padding: 1rem .5rem;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        width: 35%;
+        .photo-container{
+          height: 9rem;
+          width: 9rem;
+          position: relative;
+
+          img {
+            height: 100%;
+            width: 100%;
+            inset: 0;
+            position: absolute;
+          }
+        }
+
+        .alumni-name {
+          text-align: center;
+          font-size: 1.2rem;
+          border-bottom: 3px solid $secondary;
+        }
+      }
+
+      .basic-info-container{
+        background-color: rgba($color: $primary, $alpha: .7);
+        width: 65%;
+        padding: .5rem;
+
+        .basic-info-title{
+          font-size: 1.4rem;
+          color: $white;
+        }
+
+        .alumni-info-container{
+          border-top: 3px solid $secondary;
+          color: $white;
+          padding-top: 1rem;
+          margin-left: 1rem;
+          .infor{
+            display: flex;
+            margin-bottom: 1.3rem;
+            .key{
+              width: 35%;
+              font-size: 1rem;
+              font-weight: 300;
+            }
+
+            .value {
+              width: 65%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+}

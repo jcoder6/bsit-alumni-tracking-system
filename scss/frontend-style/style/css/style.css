@@ -933,4 +933,127 @@ login-modal-open {
   color: #337ED3;
   font-weight: bolder;
 }
+
+.gallery-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.gallery-container .gallery {
+  position: relative;
+  height: 35rem;
+  width: 100%;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  margin-bottom: 3rem;
+}
+
+.gallery-container .gallery .batch-year {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 3;
+  padding: .5rem 1rem;
+  border: 1px solid #337ED3;
+  color: #337ED3;
+  background-color: #FFDD00;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.gallery-container .gallery .img-batch-container {
+  position: absolute;
+  inset: 0;
+}
+
+.gallery-container .gallery .img-batch-container img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.alumni-container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.alumni-container .alumnae {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 1rem;
+}
+
+.alumni-container .alumnae .alumni {
+  background-color: #FFFFFF;
+  display: flex;
+  width: 45%;
+  min-height: 18rem;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.alumni-container .alumnae .alumni .photo-name-container {
+  background-color: rgba(255, 221, 0, 0.5);
+  padding: 1rem .5rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  width: 35%;
+}
+
+.alumni-container .alumnae .alumni .photo-name-container .photo-container {
+  height: 9rem;
+  width: 9rem;
+  position: relative;
+}
+
+.alumni-container .alumnae .alumni .photo-name-container .photo-container img {
+  height: 100%;
+  width: 100%;
+  inset: 0;
+  position: absolute;
+}
+
+.alumni-container .alumnae .alumni .photo-name-container .alumni-name {
+  text-align: center;
+  font-size: 1.2rem;
+  border-bottom: 3px solid #FFDD00;
+}
+
+.alumni-container .alumnae .alumni .basic-info-container {
+  background-color: rgba(51, 126, 211, 0.7);
+  width: 65%;
+  padding: .5rem;
+}
+
+.alumni-container .alumnae .alumni .basic-info-container .basic-info-title {
+  font-size: 1.4rem;
+  color: #FFFFFF;
+}
+
+.alumni-container .alumnae .alumni .basic-info-container .alumni-info-container {
+  border-top: 3px solid #FFDD00;
+  color: #FFFFFF;
+  padding-top: 1rem;
+  margin-left: 1rem;
+}
+
+.alumni-container .alumnae .alumni .basic-info-container .alumni-info-container .infor {
+  display: flex;
+  margin-bottom: 1.3rem;
+}
+
+.alumni-container .alumnae .alumni .basic-info-container .alumni-info-container .infor .key {
+  width: 35%;
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+.alumni-container .alumnae .alumni .basic-info-container .alumni-info-container .infor .value {
+  width: 65%;
+}
 /*# sourceMappingURL=style.css.map */

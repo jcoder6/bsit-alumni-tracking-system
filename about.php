@@ -52,93 +52,9 @@
     <h4 class="ct">DEVELOPERS</h4>
 
     <div class="developers">
-      <!-- <div class="developer">
-        <div class="img-container">
-          <img src="./assets/images/devs/jomer.webp" alt="dev image">
-        </div>
-
-        <div class="dev-name">
-          Jomer Dorego
-        </div>
-
-        <ul class="dev-links">
-          <a href="#">
-            <li><i class="fa-brands fa-facebook"></i></li>
-          </a>
-          <a href="#">
-            <li><i class="fa-brands fa-instagram"></i></li>
-          </a>
-          <a href="#">
-            <li><i class="fa-brands fa-twitter"></i></li>
-          </a>
-        </ul>
-      </div>
-
-      <div class="developer">
-        <div class="img-container">
-          <img src="./assets/images/Logo Psu.PNG" alt="dev image">
-        </div>
-
-        <div class="dev-name">
-          Jomer Dorego
-        </div>
-
-        <ul class="dev-links">
-          <a href="#">
-            <li><i class="fa-brands fa-facebook"></i></li>
-          </a>
-          <a href="#">
-            <li><i class="fa-brands fa-instagram"></i></li>
-          </a>
-          <a href="#">
-            <li><i class="fa-brands fa-twitter"></i></li>
-          </a>
-        </ul>
-      </div>
-
-      <div class="developer">
-        <div class="img-container">
-          <img src="./assets/images/Logo Psu.PNG" alt="dev image">
-        </div>
-
-        <div class="dev-name">
-          Jomer Dorego
-        </div>
-
-        <ul class="dev-links">
-          <a href="#">
-            <li><i class="fa-brands fa-facebook"></i></li>
-          </a>
-          <a href="#">
-            <li><i class="fa-brands fa-instagram"></i></li>
-          </a>
-          <a href="#">
-            <li><i class="fa-brands fa-twitter"></i></li>
-          </a>
-        </ul>
-      </div>
-
-      <div class="developer">
-        <div class="img-container">
-          <img src="./assets/images/Logo Psu.PNG" alt="dev image">
-        </div>
-
-        <div class="dev-name">
-          Jomer Dorego
-        </div>
-
-        <ul class="dev-links">
-          <a href="#">
-            <li><i class="fa-brands fa-facebook"></i></li>
-          </a>
-          <a href="#">
-            <li><i class="fa-brands fa-instagram"></i></li>
-          </a>
-          <a href="#">
-            <li><i class="fa-brands fa-twitter"></i></li>
-          </a>
-        </ul>
-      </div> -->
+      <!--  ======================================
+       DYNAMIC JAVASCRIPT WILL PROVIDE DATA
+    ======================================== -->
     </div>
 
 
