@@ -1,5 +1,34 @@
+<?php
+if (isset($_POST['create_account'])) {
+  $registerUsername = mysqli_real_escape_string($conn, $_POST['username']);
+  $registerPassword = mysqli_real_escape_string($conn, md5($_POST['password']));
+  $regConfirmPassword = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
+  $userCateg = 1;
+  $isVerified = 0;
+
+  echo $registerUsername . $registerPassword . $regConfirmPassword . $userCateg . '<br>';
+
+  if ($registerPassword == $regConfirmPassword) {
+    try {
+      $caQuery = "INSERT INTO users(is_verified, username, password, category) VALUES(?, ?, ?, ?)";
+      $caStmt = $pdo->prepare($caQuery)->execute([$isVerified, $registerUsername, $registerPassword, $userCateg]);
+      $_SESSION['regUsername'] = $registerUsername;
+      $_SESSION['regPassword'] = $registerPassword;
+      echo 'hello';
+      echo ("<script>location.href = '" . ROOT_URL . "reg-form-route.php';</script>");
+    } catch (Exception $e) {
+      echo 'something went wrong';
+    }
+  } else {
+    echo 'unmatch';
+    messageNotif('error', 'Password not matched');
+    echo ("<script>location.href = '" . ROOT_URL . "index.php?caOpen';</script>");
+  }
+}
+?>
+
 <div class="registration-head">
-  <div class="ca-close-btn"><i class="fa-solid fa-xmark"></i></div>
+  <a href="<?= ROOT_URL ?>" class="ca-close-btn"><i class="fa-solid fa-xmark"></i></a>
   <div class="logo-container">
     <img src="./assets/images/Logo Psu.PNG" alt="LOGO">
   </div>
@@ -11,28 +40,28 @@
 </div>
 <div class="register-form-container">
   <div class="registration-forms">
-    <form action="" method="post" class="acct-info">
+    <form action="#" method="POST" class="acct-info">
       <h4 class="form-title">Registration Account</h4>
       <div class="form-groups">
         <div class="form-group username">
           <label class="label-name" for="username">Username</label>
-          <input type="text" name="username" class="input username-input" placeholder="Username">
+          <input type="text" name="username" class="input username-input" placeholder="Username" required>
         </div>
       </div>
       <div class="form-groups">
         <div class="form-group password">
           <label class="label-name" for="password">Password</label>
-          <input type="password" name="password" class="input password-input" placeholder="Password">
+          <input type="password" name="password" class="input password-input" placeholder="Password" required>
         </div>
       </div>
       <div class="form-groups">
         <div class="form-group cpassword">
           <label class="label-name" for="cpassword">Confirm Password</label>
-          <input type="password" name="cpassword" class="input password-input" placeholder="Confirm Password">
+          <input type="password" name="cpassword" class="input password-input" placeholder="Confirm Password" required>
         </div>
       </div>
 
-      <a href="index.php?id=1" class="register-link"><input type="button" value="Register" class="button1 register-btn"></a>
+      <input type="submit" name="create_account" value="Register" class="button1 register-btn">
     </form>
   </div>
 </div>

@@ -67,8 +67,8 @@ if(page !== "events"){
 } else {
   mainPage.classList.remove('not-home');
 }
-
-if(page === ""){
+console.log(page);
+if(page === "" || page === "events#"){
   mainPage.classList.remove('not-home');
 }
 

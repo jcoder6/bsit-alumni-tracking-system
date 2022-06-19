@@ -17,7 +17,8 @@
   <title><?= PROJECT_NAME ?></title>
 </head>
 
-<body <?php if (isset($_GET['id'])) { ?> class="scroll-lock" <?php } ?>>
+<body <?php if (isset($_GET['id']) || isset($_GET['caOpen'])) { ?> class="scroll-lock" <?php } ?>>
+  <?php createAccountOpen(); ?>
   <?php showMessage(); ?>
   <header>
     <nav class="navbar">
@@ -70,7 +71,7 @@
   ?>
 
   <!-- CREATE ACCOUNT MODAL -->
-  <section class="createAcct-modal-container">
+  <section class="createAcct-modal-container" <?php isCreateAccount(); ?>>
     <?php include('./create-account.php'); ?>
   </section>
 
@@ -88,5 +89,16 @@
       <li>Log in</li>
     </a>
   <?php
+  }
+
+  function createAccountOpen() {
+    if (isset($_GET['caOpen'])) $_SESSION['caOpen'] = 'style="opacity: 1; z-index: 10;"';
+  }
+
+  function isCreateAccount() {
+    if (isset($_SESSION['caOpen'])) {
+      echo $_SESSION['caOpen'];
+      unset($_SESSION['caOpen']);
+    }
   }
   ?>
