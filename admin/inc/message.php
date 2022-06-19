@@ -6,6 +6,6 @@ function messageNotif($messagetype, $message) {
 function showMessage() {
   if (isset($_SESSION['msg'])) {
     echo $_SESSION['msg'];
-    // unset($_SESSION['msg']);
+    unset($_SESSION['msg']);
   }
 }

@@ -41,25 +41,12 @@
         <a href="<?= ROOT_URL ?>index.php?page=about" class="menu-link about-link">
           <li>About</li>
         </a>
-        <?php
-        if (isset($_SESSION['user-logged'])) {
-        ?>
-          <a href="user-page.php" class="menu-link">
-            <li><?= $_SESSION['user-logged'] ?></li>
-          </a>
-        <?php
-        } else {
-        ?>
-          <a href="#" class="menu-link login-link">
-            <li>Log in</li>
-          </a>
-        <?php
-        }
-        ?>
 
+        <?php checkUserLogged() ?>
       </ul>
     </nav>
   </header>
+
   <!-- LOG IN MODAL -->
   <section class="login-modal-container">
     <?php include('./log-in.php'); ?>
@@ -86,3 +73,20 @@
   <section class="createAcct-modal-container">
     <?php include('./create-account.php'); ?>
   </section>
+
+  <?php
+  function checkUserLogged() {
+    $is_logged = isset($_SESSION['user-logged']);
+    $loggedLink = $is_logged ? $_SESSION['user-logged'] : 'Log in';
+    $showLink = $is_logged ? 'style="display: block;"' : 'style="display: none;"';
+    $dontShowLink = $is_logged ? 'style="display: none;"' : 'style="display: block;"';
+  ?>
+    <a href="user-page.php" class="menu-link" <?= $showLink ?>>
+      <li><?= $loggedLink ?></li>
+    </a>
+    <a href="#" class="menu-link login-link" <?= $dontShowLink ?>>
+      <li>Log in</li>
+    </a>
+  <?php
+  }
+  ?>

@@ -1,4 +1,4 @@
-console.log('hello world');
+console.log('hell world');
 
 /* ======================================
     lOGIN AND REGISTER MODALS SCRIPTS
@@ -124,7 +124,7 @@ const msg = document.querySelector('.message');
 let msgType = msg.dataset.messagetype;
 
 
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   console.log(msg);
   console.log('hello');
   if(msgType == 'success'){
