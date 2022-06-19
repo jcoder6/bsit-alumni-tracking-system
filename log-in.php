@@ -53,6 +53,7 @@ if (isset($_POST['login'])) {
       header('location: ' . ROOT_URL . 'index.php?page=events');
       die();
     }
+    $_SESSION['user'] = $resLog->id;
     $_SESSION['user-logged'] = $resLog->username;
     messageNotif('success', 'Log in successfuly');
     header('location: ' . ROOT_URL . 'index.php?page=events');

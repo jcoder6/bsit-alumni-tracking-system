@@ -94,7 +94,7 @@
     $showLink = $is_logged ? 'style="display: block;"' : 'style="display: none;"';
     $dontShowLink = $is_logged ? 'style="display: none;"' : 'style="display: block;"';
   ?>
-    <a href="user-page.php" class="menu-link" <?= $showLink ?>>
+    <a href="user-page.php?user=<?php if (isset($_SESSION['user'])) echo $_SESSION['user'] ?>" class="menu-link" <?= $showLink ?>>
       <li><?= $loggedLink ?></li>
     </a>
     <a href="#" class="menu-link login-link" <?= $dontShowLink ?>>
