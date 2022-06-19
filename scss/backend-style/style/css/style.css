@@ -208,6 +208,16 @@ ul > a > li {
   width: 65%;
 }
 
+.disabled {
+  opacity: .5;
+  pointer-events: none;
+}
+
+.required {
+  color: #F96F6F;
+  font-size: 1rem;
+}
+
 .navbar {
   background-color: #337ED3;
   color: #FFFFFF;

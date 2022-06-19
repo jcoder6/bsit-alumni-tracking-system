@@ -209,3 +209,13 @@ ul > a > li {
     width: 65%;
   }
 }
+
+.disabled{
+  opacity: .5;
+  pointer-events: none;
+}
+
+.required {
+  color: $danger;
+  font-size: 1rem;
+}

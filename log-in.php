@@ -48,6 +48,11 @@ if (isset($_POST['login'])) {
     messageNotif('error', 'Incorrect username or password');
     header('location: ' . ROOT_URL . 'index.php?page=events');
   } else {
+    if ($resLog->is_verified == 0) {
+      messageNotif('error', 'You are not yet verified');
+      header('location: ' . ROOT_URL . 'index.php?page=events');
+      die();
+    }
     $_SESSION['user-logged'] = $resLog->username;
     messageNotif('success', 'Log in successfuly');
     header('location: ' . ROOT_URL . 'index.php?page=events');

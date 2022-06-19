@@ -50,6 +50,29 @@ function addModal(modal) {
   modal.style.zIndex = '10';
 }
 
+/* ======================================
+      EMPLOYMENT FORM SCRIPT
+========================================*/
+
+const checkbox = document.getElementById('employCB')
+const companyName = document.querySelector('.company_name');
+const position = document.querySelector('.position');
+const salRange = document.querySelector('.salary-range');
+checkbox.addEventListener('change', (event) => {
+  let cbValue = (event.currentTarget.checked) ? 'employed' : 'unemployed'; 
+  
+  if(cbValue !== 'employed'){
+    companyName.classList.add('disabled');
+    position.classList.add('disabled');
+    salRange.classList.add('disabled');
+  }
+
+  if(cbValue === 'employed'){
+    companyName.classList.remove('disabled');
+    position.classList.remove('disabled');
+    salRange.classList.remove('disabled');
+  }
+})
 
 /* ======================================
         DYNAMIC PAGE SCRIPT
@@ -67,7 +90,7 @@ if(page !== "events"){
 } else {
   mainPage.classList.remove('not-home');
 }
-console.log(page);
+// console.log(page);
 if(page === "" || page === "events#"){
   mainPage.classList.remove('not-home');
 }
@@ -114,54 +137,43 @@ function displayDevelopers(devResult){
       </div>`
   }).join('');
 
-  developersContainer.innerHTML = compileDevs;
+  try {
+    developersContainer.innerHTML = compileDevs;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 /* ======================================
         MESSAGE ALERTS
 ========================================*/
-const msg = document.querySelector('.message');
-let msgType = msg.dataset.messagetype;
+try {
+  const msg = document.querySelector('.message');
+  let msgType = msg.dataset.messagetype;
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  console.log(msg);
-  console.log('hello');
-  if(msgType == 'success'){
-    msg.style.color = '#3d3d3d';
-    msg.style.backgroundColor = '#96FE8A';
-    msg.classList.add('message-active');
-  }
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log(msg);
+    console.log('hello');
+    if(msgType == 'success'){
+      msg.style.color = '#3d3d3d';
+      msg.style.backgroundColor = '#96FE8A';
+      msg.classList.add('message-active');
+    }
 
-  if(msgType == 'error'){
-    msg.style.backgroundColor = '#F96F6F';
-    msg.classList.add('message-active');
-  }
+    if(msgType == 'error'){
+      msg.style.backgroundColor = '#F96F6F';
+      msg.classList.add('message-active');
+    }
 
-  setTimeout(() => {
-    msg.classList.remove('message-active');
-  }, 2000);
-})
+    setTimeout(() => {
+      msg.classList.remove('message-active');
+    }, 2000);
+  })
+} catch (e) {
+  console.log(e);
+}
 
-// window.onload = function() {
-//   if(this.readyState === 4) {
-//     console.log(msg);
-//   if(msgType == 'success'){
-//     msg.style.color = '#3d3d3d';
-//     msg.style.backgroundColor = '#96FE8A';
-//     msg.classList.add('message-active');
-//   }
-
-//   if(msgType == 'error'){
-//     msg.style.backgroundColor = '#F96F6F';
-//     msg.classList.add('message-active');
-//   }
-
-//   setTimeout(() => {
-//     msg.classList.remove('message-active');
-//   }, 2000);
-//   }
-// }
 
 
 

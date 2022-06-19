@@ -1,32 +1,3 @@
-<?php
-if (isset($_POST['create_account'])) {
-  $registerUsername = mysqli_real_escape_string($conn, $_POST['username']);
-  $registerPassword = mysqli_real_escape_string($conn, md5($_POST['password']));
-  $regConfirmPassword = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
-  $userCateg = 1;
-  $isVerified = 0;
-
-  echo $registerUsername . $registerPassword . $regConfirmPassword . $userCateg . '<br>';
-
-  if ($registerPassword == $regConfirmPassword) {
-    try {
-      $caQuery = "INSERT INTO users(is_verified, username, password, category) VALUES(?, ?, ?, ?)";
-      $caStmt = $pdo->prepare($caQuery)->execute([$isVerified, $registerUsername, $registerPassword, $userCateg]);
-      $_SESSION['regUsername'] = $registerUsername;
-      $_SESSION['regPassword'] = $registerPassword;
-      echo 'hello';
-      echo ("<script>location.href = '" . ROOT_URL . "reg-form-route.php';</script>");
-    } catch (Exception $e) {
-      echo 'something went wrong';
-    }
-  } else {
-    echo 'unmatch';
-    messageNotif('error', 'Password not matched');
-    echo ("<script>location.href = '" . ROOT_URL . "index.php?caOpen';</script>");
-  }
-}
-?>
-
 <div class="registration-head">
   <a href="<?= ROOT_URL ?>" class="ca-close-btn"><i class="fa-solid fa-xmark"></i></a>
   <div class="logo-container">
@@ -65,3 +36,33 @@ if (isset($_POST['create_account'])) {
     </form>
   </div>
 </div>
+
+<?php
+if (isset($_POST['create_account'])) {
+  $registerUsername = mysqli_real_escape_string($conn, $_POST['username']);
+  $registerPassword = mysqli_real_escape_string($conn, md5($_POST['password']));
+  $regConfirmPassword = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
+  $userCateg = 1;
+  $isVerified = 0;
+
+
+  if ($registerPassword == $regConfirmPassword) {
+    // echo $registerUsername . $registerPassword . $regConfirmPassword . $userCateg . '<br>';
+    try {
+      $caQuery = "INSERT INTO users(is_verified, username, password, category) VALUES(?, ?, ?, ?)";
+      $caStmt = $pdo->prepare($caQuery)->execute([$isVerified, $registerUsername, $registerPassword, $userCateg]);
+      $_SESSION['regUsername'] = $registerUsername;
+      $_SESSION['regPassword'] = $registerPassword;
+      $_SESSION['in-register'] = 'hello';
+      messageNotif('success', 'Created an Account, Just Fill out the form');
+      echo ("<script>location.href = '" . ROOT_URL . "reg-form-route.php';</script>");
+    } catch (Exception $e) {
+      echo 'something went wrong';
+    }
+  } else {
+    echo 'unmatch';
+    messageNotif('error', 'Password not matched');
+    echo ("<script>location.href = '" . ROOT_URL . "index.php?caOpen';</script>");
+  }
+}
+?>

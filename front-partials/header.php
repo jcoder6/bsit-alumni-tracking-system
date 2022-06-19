@@ -17,9 +17,13 @@
   <title><?= PROJECT_NAME ?></title>
 </head>
 
-<body <?php if (isset($_GET['id']) || isset($_GET['caOpen'])) { ?> class="scroll-lock" <?php } ?>>
-  <?php createAccountOpen(); ?>
-  <?php showMessage(); ?>
+<body <?php if (isset($_GET['id']) || isset($_GET['caOpen']) || isset($_GET['alumni'])) { ?> class="scroll-lock" <?php } ?>>
+  <?php
+  createAccountOpen();
+  registrationSuccessOpen();
+  showMessage();
+  ?>
+
   <header>
     <nav class="navbar">
       <div class="logo-section">
@@ -74,6 +78,14 @@
   <section class="createAcct-modal-container" <?php isCreateAccount(); ?>>
     <?php include('./create-account.php'); ?>
   </section>
+  <!-- CREATE ACCOUNT MODAL -->
+
+
+  <section class="registerSuccess-modal-container" <?php isRSOpen() ?>>
+    <?php include('./register-success.php'); ?>
+  </section>
+
+
 
   <?php
   function checkUserLogged() {
@@ -91,14 +103,26 @@
   <?php
   }
 
+
   function createAccountOpen() {
     if (isset($_GET['caOpen'])) $_SESSION['caOpen'] = 'style="opacity: 1; z-index: 10;"';
+  }
+
+  function registrationSuccessOpen() {
+    if (isset($_GET['alumni'])) $_SESSION['rso'] = 'style="opacity: 1; z-index: 10;"';
   }
 
   function isCreateAccount() {
     if (isset($_SESSION['caOpen'])) {
       echo $_SESSION['caOpen'];
       unset($_SESSION['caOpen']);
+    }
+  }
+
+  function isRSOpen() {
+    if (isset($_SESSION['rso'])) {
+      echo $_SESSION['rso'];
+      unset($_SESSION['rso']);
     }
   }
   ?>
