@@ -32,7 +32,7 @@
 // unset($_POST['login']);
 if (isset($_POST['login'])) {
   $usernameLog = mysqli_real_escape_string($conn, $_POST['username']);
-  $passwordLog = mysqli_real_escape_string($conn, $_POST['password']);
+  $passwordLog = mysqli_real_escape_string($conn, md5($_POST['password']));
   $userTypeLog = mysqli_real_escape_string($conn, $_POST['user-type']);
 
   echo $usernameLog . $passwordLog . $userTypeLog;

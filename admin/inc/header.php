@@ -20,9 +20,7 @@ if (!isset($_SESSION['user'])) {
   <title><?= PROJECT_NAME ?></title>
 </head>
 
-<body <?php if (isset($_GET['view-alumni'])) {
-        echo 'style="overflow:hidden;"';
-      } ?>>
+<body <?php if (isset($_GET['view-alumni']) || isset($_GET['delete-alumni'])) echo 'style="overflow:hidden;"'; ?>>
 
   <?php
   if (isset($_SESSION['msg'])) {

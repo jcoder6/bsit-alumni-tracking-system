@@ -1,20 +1,4 @@
-<?php
-$queryView = "SELECT u.id, u.is_verified, b.firstname, b.lastname, b.email, e.batch, e.course, b.gender, em.employed FROM users u
-  JOIN bio b ON b.user_id = u.id
-  JOIN educ e ON b.user_id = u.id 
-  JOIN employment em ON b.user_id = u.id
-  WHERE u.id = 25 
-  LIMIT 1";
-
-try {
-  $stmtView = $pdo->prepare($queryView);
-  $stmtView->execute();
-  $rv = $stmtView->fetchObject();
-  // var_dump($resView);
-} catch (PDOException $e) {
-  echo $e;
-}
-?>
+<?php $rv = fetchCurrentAlumni($pdo) ?>
 <div class="alumni-modal">
   <div class="alumni-modal-head">
     <h3>Alumni Information</h3>
@@ -71,10 +55,29 @@ if (isset($_POST['verify-account'])) {
   $stmt = $pdo->prepare($query);
   if ($stmt->execute()) {
     messageNotif('success', 'Verified Account');
-    header('location: ' . ROOT_URL . 'admin/index.php?page=manage-alumni');
+    echo "<script>window.location.href='" . ROOT_URL . "admin/index.php?page=manage-alumni';</script>";
   } else {
     messageNotif('error', 'Something went wrong');
     header('location: ' . ROOT_URL . 'admin/index.php?page=manage-alumni');
+  }
+}
+
+function fetchCurrentAlumni($pdo) {
+  $vaID = $_GET['view-alumni'];
+  $queryView = "SELECT u.id, u.is_verified, b.firstname, b.lastname, b.email, e.batch, e.course, b.gender, em.employed FROM users u
+  JOIN bio b ON b.user_id = u.id
+  JOIN educ e ON b.user_id = u.id 
+  JOIN employment em ON b.user_id = u.id
+  WHERE u.id = $vaID 
+  LIMIT 1";
+
+  try {
+    $stmtView = $pdo->prepare($queryView);
+    $stmtView->execute();
+    return $stmtView->fetchObject();
+    // var_dump($resView);
+  } catch (PDOException $e) {
+    echo $e;
   }
 }
 

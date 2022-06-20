@@ -128,5 +128,17 @@ box-shadow: 5px 5px 15px rgba($color: #000000, $alpha: .4);
   }
 }
 
+.delete-modal {
+height: 30vh;
+width: 60vw;
+transform: translate(-50%, -165%);
+
+  .del-msg{
+    font-size: 1.2rem;
+    color: $dark-gray;
+    margin: 1.5rem;
+  }
+}
+
 
 
