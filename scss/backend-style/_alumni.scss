@@ -1,0 +1,132 @@
+.alumni {
+  .alumni-np{
+    width: 27%;
+    .alumni-img-container{
+      height: 7rem;
+      width: 7rem;
+      position: relative;
+      border-radius: 50%;
+      margin-bottom: 1.5rem;
+
+      img {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        inset: 0;
+      }
+    }
+
+    .alumni-name{
+      color: $dark-gray;
+    }
+  }
+
+  .no{
+    width: 7%;
+  }
+
+  .course {
+    width: 46%;
+  }
+
+  .action {
+    width: 20%;
+    padding: 5rem;
+    gap: 1rem;
+    .alumni-action {
+      width: 80%;
+    }
+  }
+}
+
+.view-alumni-modal-container{
+  background-color: rgba($color: #000000, $alpha: .3);
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  z-index: -100;
+}
+
+.alumni-modal {
+background: $white;
+height: 75vh;
+width: 60vw;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+display: flex;
+flex-direction: column;
+border-radius: 15px;
+overflow: hidden;
+box-shadow: 5px 5px 15px rgba($color: #000000, $alpha: .4);
+    .alumni-modal-head{
+      background-color: $primary;
+      padding: .5rem 1rem;
+
+      h3{
+        font-family: $f-secondary;
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: $white;
+        letter-spacing: 1px;
+      }
+    }
+
+  .alumni-modal-content{
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // border: 1px solid red;
+    margin: auto 0;
+    .alumni-img-container{
+      height: 13rem;
+      width: 13rem;
+      position: relative;
+      border-radius: 50%;
+      margin: auto;
+
+      img{
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        inset: 0;
+      }
+    }
+
+    .alumni-info{
+      width: 65%;
+      padding: 3rem;
+      border-left: 2px solid $mid-gray;
+      margin: auto 0;
+      .key{
+        color: $primary;
+        font-weight: bold;
+      }
+      .value {
+        font-weight: bold;
+        color: $dark-gray
+      }
+    }
+  }
+
+  .alumni-modal-foot{
+    margin-top: auto;
+    background-color: $primary;
+    padding: .5rem 1rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    padding-right: 3rem;
+    align-items: center;
+
+    input{
+      font-family: $f-primary;
+      cursor: pointer;
+    }
+  }
+}
+
+
+

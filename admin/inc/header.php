@@ -1,10 +1,10 @@
 <?php
 include('./db_connect.php');
+include('./inc/message.php');
 if (!isset($_SESSION['user'])) {
   header('location: ' . ROOT_URL . 'admin/log-in.php');
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,7 +20,9 @@ if (!isset($_SESSION['user'])) {
   <title><?= PROJECT_NAME ?></title>
 </head>
 
-<body>
+<body <?php if (isset($_GET['view-alumni'])) {
+        echo 'style="overflow:hidden;"';
+      } ?>>
 
   <?php
   if (isset($_SESSION['msg'])) {

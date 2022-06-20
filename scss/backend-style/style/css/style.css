@@ -11,6 +11,7 @@ html {
 body {
   font-size: 16px;
   font-family: "Josefin Sans", sans-serif;
+  background-color: #f0f0f0;
 }
 
 ::-webkit-scrollbar {
@@ -61,7 +62,8 @@ ul > a > li {
   left: 22rem;
   right: 2rem;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .content-container {
@@ -336,5 +338,244 @@ ul > a > li {
   background-color: #FFDD00;
   color: #3d3d3d;
   font-weight: bold;
+}
+
+.manage-table {
+  width: 100%;
+}
+
+.manage-table .table-name {
+  color: #FFFFFF;
+  line-height: 1;
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.manage-table .table-head {
+  margin-top: 2rem;
+  padding: .9rem 1.2rem .5rem;
+  background-color: #337ED3;
+  color: #FFFFFF;
+}
+
+.manage-table .table-content {
+  background-color: #FFFFFF;
+}
+
+.manage-table .table-content .table-data {
+  display: flex;
+  border: 2px solid #CECECE;
+  border-top: none;
+  border-right: none;
+}
+
+.manage-table .table-content .head {
+  padding: .5rem;
+}
+
+.manage-table .table-content .no, .manage-table .table-content .alumni-np, .manage-table .table-content .course, .manage-table .table-content .action {
+  text-align: center;
+  padding: .5rem;
+  padding-top: .7rem;
+  font-size: 1.2rem;
+  border-right: 2px solid #CECECE;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-primary {
+  padding: .8rem 1rem .5rem;
+  border: 2px solid #337ED3;
+  color: #3d3d3d;
+  transition: all 250ms ease-in-out;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.button-primary:hover {
+  background-color: #337ED3;
+  color: #FFFFFF;
+}
+
+.button-danger {
+  padding: .8rem 1rem .5rem;
+  border: 2px solid #F96F6F;
+  color: #3d3d3d;
+  transition: all 250ms ease-in-out;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.button-danger:hover {
+  background-color: #F96F6F;
+  color: #FFFFFF;
+}
+
+.button-success {
+  padding: .8rem 1rem .5rem;
+  border: 2px solid #96FE8A;
+  color: #3d3d3d;
+  transition: all 250ms ease-in-out;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.button-success:hover {
+  background-color: #96FE8A;
+  color: #3d3d3d;
+}
+
+.button-secondary {
+  padding: .8rem 1rem .5rem;
+  border: 2px solid #3d3d3d;
+  color: #3d3d3d;
+  transition: all 250ms ease-in-out;
+  background-color: #CECECE;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.button-secondary:hover {
+  background-color: #3d3d3d;
+  color: #FFFFFF;
+}
+
+.alumni .alumni-np {
+  width: 27%;
+}
+
+.alumni .alumni-np .alumni-img-container {
+  height: 7rem;
+  width: 7rem;
+  position: relative;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+}
+
+.alumni .alumni-np .alumni-img-container img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.alumni .alumni-np .alumni-name {
+  color: #3d3d3d;
+}
+
+.alumni .no {
+  width: 7%;
+}
+
+.alumni .course {
+  width: 46%;
+}
+
+.alumni .action {
+  width: 20%;
+  padding: 5rem;
+  gap: 1rem;
+}
+
+.alumni .action .alumni-action {
+  width: 80%;
+}
+
+.view-alumni-modal-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: fixed;
+  inset: 0;
+  opacity: 0;
+  z-index: -100;
+}
+
+.alumni-modal {
+  background: #FFFFFF;
+  height: 75vh;
+  width: 60vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.alumni-modal .alumni-modal-head {
+  background-color: #337ED3;
+  padding: .5rem 1rem;
+}
+
+.alumni-modal .alumni-modal-head h3 {
+  font-family: "Charis SIL", serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+}
+
+.alumni-modal .alumni-modal-content {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto 0;
+}
+
+.alumni-modal .alumni-modal-content .alumni-img-container {
+  height: 13rem;
+  width: 13rem;
+  position: relative;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.alumni-modal .alumni-modal-content .alumni-img-container img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.alumni-modal .alumni-modal-content .alumni-info {
+  width: 65%;
+  padding: 3rem;
+  border-left: 2px solid #919191;
+  margin: auto 0;
+}
+
+.alumni-modal .alumni-modal-content .alumni-info .key {
+  color: #337ED3;
+  font-weight: bold;
+}
+
+.alumni-modal .alumni-modal-content .alumni-info .value {
+  font-weight: bold;
+  color: #3d3d3d;
+}
+
+.alumni-modal .alumni-modal-foot {
+  margin-top: auto;
+  background-color: #337ED3;
+  padding: .5rem 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding-right: 3rem;
+  align-items: center;
+}
+
+.alumni-modal .alumni-modal-foot input {
+  font-family: "Josefin Sans", sans-serif;
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

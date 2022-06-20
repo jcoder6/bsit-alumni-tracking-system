@@ -1,0 +1,97 @@
+.manage-table{
+  width: 100%;
+  .table-name {
+    color: $white;
+    line-height: 1;
+    font-size: 1.4rem;
+    margin: 0;
+  }
+  .table-head{
+    margin-top: 2rem;
+    padding: .9rem 1.2rem .5rem;
+    background-color: $primary;
+    color: $white;
+  }
+
+  .table-content {
+    background-color: $white;
+    .table-data{
+      display: flex;
+      border: 2px solid $light-gray;
+      border-top: none;
+      border-right: none;
+
+    }
+    .head {
+      padding: .5rem
+    }
+    .no, .alumni-np, .course, .action {
+      text-align: center;
+      padding:.5rem;
+      padding-top: .7rem;
+      font-size: 1.2rem;
+      border-right: 2px solid $light-gray;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.button-primary {
+  padding: .8rem 1rem .5rem;
+  border: 2px solid $primary;
+  color: $dark-gray;
+  transition: $transition1;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  &:hover {
+    background-color: $primary;
+    color: $white;
+  }
+}
+
+.button-danger {
+  padding: .8rem 1rem .5rem;
+  border: 2px solid $danger;
+  color: $dark-gray;
+  transition: $transition1;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  &:hover {
+    background-color: $danger;
+    color: $white;
+  }
+}
+
+.button-success {
+  padding: .8rem 1rem .5rem;
+  border: 2px solid $success;
+  color: $dark-gray;
+  transition: $transition1;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  &:hover {
+    background-color: $success;
+    color: $dark-gray;
+  }
+}
+
+.button-secondary {
+  padding: .8rem 1rem .5rem;
+  border: 2px solid $dark-gray;
+  color: $dark-gray;
+  transition: $transition1;
+  background-color: $light-gray;
+  border-radius: 5px;
+  font-size: 1rem;
+  &:hover {
+    background-color: $dark-gray;
+    color: $white;
+  }
+}

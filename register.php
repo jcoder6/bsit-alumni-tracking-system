@@ -212,7 +212,7 @@ function insertData($query, $data, $pdo) {
           <label class="label-name" for="course">Course <span class="required">*</span> </label>
           <select required class="course-select" name="course" class="input course-input">
             <option value="" selected disabled hidden>Choose here</option>
-            <option value="bsit">BS Information Technoloy</option>
+            <option value="BS Information Technology">BS Information Technology</option>
           </select>
         </div>
         <div class="form-group batch">
