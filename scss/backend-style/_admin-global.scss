@@ -11,6 +11,8 @@
     padding: .9rem 1.2rem .5rem;
     background-color: $primary;
     color: $white;
+    display: flex;
+    align-items: center;
   }
 
   .table-content {
@@ -25,7 +27,8 @@
     .head {
       padding: .5rem
     }
-    .no, .alumni-np, .course, .action {
+    
+    .column {
       text-align: center;
       padding:.5rem;
       padding-top: .7rem;
@@ -35,6 +38,16 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+  }
+
+  
+  .action {
+    width: 20%;
+    padding: 5rem;
+    gap: 1rem;
+    .alumni-action {
+      width: 80%;
     }
   }
 }
@@ -93,5 +106,28 @@
   &:hover {
     background-color: $dark-gray;
     color: $white;
+  }
+}
+
+.add-btn {
+  padding: .5rem 3rem .3rem;
+  border: 2px solid $secondary;
+  font-size: .8rem;
+  border-radius: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: $transition1;
+  i {
+    transition: $transition1;
+    margin-right: 5px;
+  }
+  &:hover {
+    background-color: $secondary;
+    color: $primary;
+
+    i {
+      transform: translate(-300%);
+    }
   }
 }

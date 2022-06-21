@@ -18,10 +18,10 @@
   </div>
   <div class="table-content">
     <div class="table-data">
-      <div class="no">#</div>
-      <div class="alumni-np">Alumni</div>
-      <div class="course">Course</div>
-      <div class="action head">Action</div>
+      <div class="column no">#</div>
+      <div class="column alumni-np">Alumni</div>
+      <div class="column course">Course</div>
+      <div class="column action head">Action</div>
     </div>
     <?php
     $no = 0;
@@ -29,15 +29,15 @@
       $no++;
     ?>
       <div class="table-data">
-        <div class="no"><?= $no ?></div>
-        <div class="alumni-np">
+        <div class="column no"><?= $no ?></div>
+        <div class="column alumni-np">
           <div class="alumni-img-container">
             <img src="../assets/images/no-img.PNG" alt="ALUMNI">
           </div>
           <h4 class="alumni-name"><?= $rs['firstname'] . ' ' . $rs['lastname'] ?></h4>
         </div>
-        <div class="course"><?= $rs['course'] ?></div>
-        <div class="action">
+        <div class="column course"><?= $rs['course'] ?></div>
+        <div class="column action">
           <a class="alumni-action button-primary" href="<?php ROOT_URL ?>index.php?page=manage-alumni&view-alumni=<?= $rs['id'] ?>">View</a>
           <a class="alumni-action button-danger" href="<?php ROOT_URL ?>index.php?page=manage-alumni&delete-alumni=<?= $rs['id'] ?>">Delete</a>
         </div>

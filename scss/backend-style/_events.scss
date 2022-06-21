@@ -1,0 +1,41 @@
+.events {
+  .add-event {
+    margin-left: auto;
+    margin-bottom: 3px;
+  }
+  .table-data {
+    .no {
+      width: 3%;
+    }
+
+    .title {
+      width: 22%
+    }
+
+    .date{
+      width: 22%;
+    }
+
+    .photo {
+      width: 36%;
+    }
+
+    .action {
+      width: 17%;
+    }
+
+    .event-img-container{
+      width: 90%;
+      max-width: 30rem;
+      height: 13rem;
+      position: relative;
+
+      img {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        inset: 0;
+      }
+    }
+  }
+}

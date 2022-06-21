@@ -356,6 +356,8 @@ ul > a > li {
   padding: .9rem 1.2rem .5rem;
   background-color: #337ED3;
   color: #FFFFFF;
+  display: flex;
+  align-items: center;
 }
 
 .manage-table .table-content {
@@ -373,7 +375,7 @@ ul > a > li {
   padding: .5rem;
 }
 
-.manage-table .table-content .no, .manage-table .table-content .alumni-np, .manage-table .table-content .course, .manage-table .table-content .action {
+.manage-table .table-content .column {
   text-align: center;
   padding: .5rem;
   padding-top: .7rem;
@@ -383,6 +385,16 @@ ul > a > li {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.manage-table .action {
+  width: 20%;
+  padding: 5rem;
+  gap: 1rem;
+}
+
+.manage-table .action .alumni-action {
+  width: 80%;
 }
 
 .button-primary {
@@ -446,6 +458,31 @@ ul > a > li {
   color: #FFFFFF;
 }
 
+.add-btn {
+  padding: .5rem 3rem .3rem;
+  border: 2px solid #FFDD00;
+  font-size: .8rem;
+  border-radius: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+
+.add-btn i {
+  transition: all 250ms ease-in-out;
+  margin-right: 5px;
+}
+
+.add-btn:hover {
+  background-color: #FFDD00;
+  color: #337ED3;
+}
+
+.add-btn:hover i {
+  transform: translate(-300%);
+}
+
 .alumni .alumni-np {
   width: 27%;
 }
@@ -475,16 +512,6 @@ ul > a > li {
 
 .alumni .course {
   width: 46%;
-}
-
-.alumni .action {
-  width: 20%;
-  padding: 5rem;
-  gap: 1rem;
-}
-
-.alumni .action .alumni-action {
-  width: 80%;
 }
 
 .view-alumni-modal-container {
@@ -589,5 +616,44 @@ ul > a > li {
   font-size: 1.2rem;
   color: #3d3d3d;
   margin: 1.5rem;
+}
+
+.events .add-event {
+  margin-left: auto;
+  margin-bottom: 3px;
+}
+
+.events .table-data .no {
+  width: 3%;
+}
+
+.events .table-data .title {
+  width: 22%;
+}
+
+.events .table-data .date {
+  width: 22%;
+}
+
+.events .table-data .photo {
+  width: 36%;
+}
+
+.events .table-data .action {
+  width: 17%;
+}
+
+.events .table-data .event-img-container {
+  width: 90%;
+  max-width: 30rem;
+  height: 13rem;
+  position: relative;
+}
+
+.events .table-data .event-img-container img {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  inset: 0;
 }
 /*# sourceMappingURL=style.css.map */
