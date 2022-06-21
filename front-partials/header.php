@@ -17,7 +17,8 @@
   <title><?= PROJECT_NAME ?></title>
 </head>
 
-<body <?php if (isset($_GET['id']) || isset($_GET['caOpen']) || isset($_GET['alumni'])) { ?> class="scroll-lock" <?php } ?>>
+<body <?php if (isset($_GET['id']) || isset($_GET['caOpen']) || isset($_GET['alumni']) || isset($_GET['edit'])) { ?> class="scroll-lock" <?php } ?>>
+
   <?php
   createAccountOpen();
   registrationSuccessOpen();
@@ -94,8 +95,8 @@
     $showLink = $is_logged ? 'style="display: block;"' : 'style="display: none;"';
     $dontShowLink = $is_logged ? 'style="display: none;"' : 'style="display: block;"';
   ?>
-    <a href="user-page.php?user=<?php if (isset($_SESSION['user'])) echo $_SESSION['user'] ?>" class="menu-link" <?= $showLink ?>>
-      <li><?= $loggedLink ?></li>
+    <a href="user-page.php?user=<?php if (isset($_SESSION['logged-user'])) echo $_SESSION['logged-user'] ?>" class="menu-link" <?= $showLink ?>>
+      <li><?= ucwords($loggedLink) ?></li>
     </a>
     <a href="#" class="menu-link login-link" <?= $dontShowLink ?>>
       <li>Log in</li>

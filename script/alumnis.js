@@ -1,4 +1,4 @@
-console.log('hell world');
+console.log('hell0 world');
 
 /* ======================================
     lOGIN AND REGISTER MODALS SCRIPTS

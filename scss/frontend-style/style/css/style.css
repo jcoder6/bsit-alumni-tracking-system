@@ -712,7 +712,7 @@ ul > a > li {
   margin-top: -5px;
 }
 
-.registration-modal-container .register-form-container .registration-forms .company_name, .registration-modal-container .register-form-container .registration-forms .position, .createAcct-modal-container .register-form-container .registration-forms .company_name, .createAcct-modal-container .register-form-container .registration-forms .position, .registerSuccess-modal-container .register-form-container .registration-forms .company_name, .registerSuccess-modal-container .register-form-container .registration-forms .position {
+.registration-modal-container .register-form-container .registration-forms .company_name, .registration-modal-container .register-form-container .registration-forms .edit-company_name, .registration-modal-container .register-form-container .registration-forms .position, .registration-modal-container .register-form-container .registration-forms .edit-position, .createAcct-modal-container .register-form-container .registration-forms .company_name, .createAcct-modal-container .register-form-container .registration-forms .edit-company_name, .createAcct-modal-container .register-form-container .registration-forms .position, .createAcct-modal-container .register-form-container .registration-forms .edit-position, .registerSuccess-modal-container .register-form-container .registration-forms .company_name, .registerSuccess-modal-container .register-form-container .registration-forms .edit-company_name, .registerSuccess-modal-container .register-form-container .registration-forms .position, .registerSuccess-modal-container .register-form-container .registration-forms .edit-position {
   width: 100%;
 }
 

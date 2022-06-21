@@ -1,4 +1,5 @@
-<?php $rv = fetchCurrentAlumni($pdo) ?>
+<?php $resAlumni = fetchCurrentAlumni($pdo) ?>
+
 <div class="alumni-modal">
   <div class="alumni-modal-head">
     <h3>Alumni Information</h3>
@@ -11,37 +12,39 @@
     <div class="alumni-info">
       <div class="infor">
         <div class="key">Name:</div>
-        <div class="value"><?= ucwords($rv->firstname) . ' ' . ucwords($rv->lastname) ?></div>
+        <div class="value"><?= ucwords($resAlumni->firstname) . ' ' . ucwords($resAlumni->lastname) ?></div>
       </div>
       <div class="infor">
         <div class="key">Email:</div>
-        <div class="value"><?= $rv->email ?></div>
+        <div class="value"><?= $resAlumni->email ?></div>
       </div>
       <div class="infor">
         <div class="key">Batch:</div>
-        <div class="value"><?= $rv->batch ?></div>
+        <div class="value"><?= $resAlumni->batch ?></div>
       </div>
       <div class="infor">
         <div class="key">Course:</div>
-        <div class="value"><?= $rv->course ?></div>
+        <div class="value"><?= $resAlumni->course ?></div>
       </div>
       <div class="infor">
         <div class="key">Gender:</div>
-        <div class="value"><?= ucwords($rv->gender) ?></div>
+        <div class="value"><?= ucwords($resAlumni->gender) ?></div>
       </div>
       <div class="infor">
         <div class="key">Employment:</div>
-        <div class="value"><?= ucwords($rv->employed) ?></div>
+        <div class="value"><?= ucwords($resAlumni->employed) ?></div>
       </div>
       <div class="infor">
         <div class="key">Account Status:</div>
-        <div class="value"><?php isVerified($rv->is_verified); ?></div>
+        <div class="value"><?php isVerified($resAlumni->is_verified); ?></div>
       </div>
     </div>
   </div>
 
   <div class="alumni-modal-foot">
-    <form action="" method="post"><input type="submit" name="verify-account" class="button-success" value="Verify Account"></form>
+    <form action="" method="post" <?= pointer($resAlumni->is_verified) ?>>
+      <input type="submit" name="verify-account" class="button-success" value="Verify Account">
+    </form>
     <a href="<?php ROOT_URL ?>index.php?page=manage-alumni" class="button-secondary">Close</a>
   </div>
 </div>
@@ -83,5 +86,9 @@ function fetchCurrentAlumni($pdo) {
 
 function isVerified($isVerified) {
   echo $isVerified == 1 ? 'Verified' : 'Unverified';
+}
+
+function pointer($isVerified) {
+  echo $isVerified == 1 ? 'style="pointer-events: none; opacity: .7"' : 'style="pointer-events:auto;  opacity: 1"';
 }
 ?>
