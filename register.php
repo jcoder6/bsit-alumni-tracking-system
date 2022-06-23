@@ -252,7 +252,7 @@ function insertData($query, $data, $pdo) {
             <option value="10,001-50,000">10,001-50,000</option>
             <option value="50,001-100,000">50,001-100,000</option>
             <option value="100,001-200,000">100,001-200,000</option>
-            <option value="100,001-200,000">200,001 above</option>
+            <option value="200,001 above">200,001 above</option>
           </select>
         </div>
       </div>
