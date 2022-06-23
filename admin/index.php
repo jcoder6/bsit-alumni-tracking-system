@@ -7,8 +7,8 @@
     <?php
     if (isset($_GET['page'])) {
       $page = $_GET['page'];
-      if ($page == 'dashboard') {
-        include('./dashboard.php');
+      if ($page == 'add-events') {
+        include('./add-event.php');
       } else if ($page == 'manage-events') {
         include('./manage-events.php');
       } else if ($page == 'manage-alumni') {
@@ -19,8 +19,10 @@
         include('./manage-course.php');
       } else if ($page == 'manage-user') {
         include('./manage-user.php');
-      } else {
+      } else if ($page == 'manage-website') {
         include('./manage-website.php');
+      } else {
+        include('./dashboard.php');
       }
     }
     ?>

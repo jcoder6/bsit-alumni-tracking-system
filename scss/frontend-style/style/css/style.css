@@ -489,6 +489,8 @@ ul > a > li {
   margin-bottom: 3rem;
   line-height: 1.6;
   padding: .5rem;
+  max-height: 12rem;
+  overflow: hidden;
 }
 
 .event-container .event-detail-container .detail-container .read-more {
@@ -1225,5 +1227,67 @@ login-modal-open {
 .user-info-container a {
   align-self: flex-end;
   margin-right: 4rem;
+}
+
+.view-event-container {
+  background-color: #FFFFFF;
+  padding: 2rem;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.view-event-container .img-title-container {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.view-event-container .img-title-container .event-img-container {
+  width: 50%;
+  height: 30rem;
+  max-width: 40rem;
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.view-event-container .img-title-container .event-img-container img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.view-event-container .img-title-container .view-event-title {
+  width: 50%;
+}
+
+.view-event-container .img-title-container .view-event-title h2 {
+  font-size: 2.3rem;
+}
+
+.view-event-container .img-title-container .view-event-title p {
+  font-size: 1.2rem;
+  color: #337ED3;
+  font-weight: bold;
+}
+
+.view-event-container .view-event-desc {
+  text-align: center;
+}
+
+.view-event-container .view-event-desc h3 {
+  color: #3d3d3d;
+  margin-bottom: 1.3rem;
+}
+
+.view-event-container .view-event-desc .event-desc-content {
+  text-align: left;
+  padding: 0 5rem;
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #3d3d3d;
 }
 /*# sourceMappingURL=style.css.map */

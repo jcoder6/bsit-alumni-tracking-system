@@ -20,6 +20,10 @@
     if ($fpage == 'events') {
       include('./events.php');
     }
+
+    if ($fpage == 'view-event') {
+      include('./view-event.php');
+    }
   } else {
     include('./events.php');
   }
