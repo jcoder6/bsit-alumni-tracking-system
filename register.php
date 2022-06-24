@@ -1,9 +1,5 @@
 <?php
-// if (!isset($_SESSION['in-register'])) {
-//   messageNotif('error', 'You have no rights');
-//   header('location: ' . ROOT_URL);
-//   die();
-// }
+$courses = fetchAllCourse($pdo);
 if (isset($_POST['register'])) {
   if (!isset($_GET['id']) || !isset($_SESSION['in-register'])) {
     messageNotif('error', 'Something went wrong');
@@ -109,6 +105,16 @@ function insertData($query, $data, $pdo) {
     echo $e;
   }
 }
+
+function fetchAllCourse($pdo) {
+  $query = "SELECT course_name FROM course";
+  $stmt = $pdo->prepare($query);
+  if ($stmt->execute()) {
+    return $stmt->fetchAll(PDO::FETCH_OBJ);
+  } else {
+    echo 'error fetch';
+  }
+}
 ?>
 
 <div class="registration-head">
@@ -212,7 +218,9 @@ function insertData($query, $data, $pdo) {
           <label class="label-name" for="course">Course <span class="required">*</span> </label>
           <select required class="course-select" name="course" class="input course-input">
             <option value="" selected disabled hidden>Choose here</option>
-            <option value="BS Information Technology">BS Information Technology</option>
+            <?php foreach ($courses as $course) : ?>
+              <option value="BS Information Technology"><?= $course->course_name ?></option>
+            <?php endforeach ?>
           </select>
         </div>
         <div class="form-group batch">

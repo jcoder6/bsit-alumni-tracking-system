@@ -1,0 +1,55 @@
+.add-course-container {
+  background-color: $white;
+  width: 980px;
+  box-shadow: 5px 5px 10px rgba($color: #000000, $alpha: .5);
+  border-radius: 10px;
+  overflow: hidden;
+margin-top: 2rem;
+  .table-head{
+    margin: 0;
+  }
+
+  .add-course-form {
+    width: 90%;
+    margin: 0 auto;
+    padding: 2rem 0;
+
+    .form-groups {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+
+      .course-name{
+        width: 70%;
+      }
+
+      .course-code {
+        width: 30%;
+      }
+
+    }
+    .form-submit{
+      width: 100%;
+      text-align: right;
+      padding-right: 2rem;
+    }
+  }
+}
+
+.courses {
+  margin-bottom: 3rem;
+  .table-data {
+    .no {
+      width: 5%;
+    }
+    .title {
+      width: 55%;
+    }
+    .code {
+      width: 20%;
+    }
+    .action{
+      width: 20%;
+    }
+  }
+}

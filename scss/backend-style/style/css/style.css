@@ -802,4 +802,63 @@ ul > a > li {
   height: 13rem;
   max-height: 13rem;
 }
+
+.add-course-container {
+  background-color: #FFFFFF;
+  width: 980px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.add-course-container .table-head {
+  margin: 0;
+}
+
+.add-course-container .add-course-form {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.add-course-container .add-course-form .form-groups {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.add-course-container .add-course-form .form-groups .course-name {
+  width: 70%;
+}
+
+.add-course-container .add-course-form .form-groups .course-code {
+  width: 30%;
+}
+
+.add-course-container .add-course-form .form-submit {
+  width: 100%;
+  text-align: right;
+  padding-right: 2rem;
+}
+
+.courses {
+  margin-bottom: 3rem;
+}
+
+.courses .table-data .no {
+  width: 5%;
+}
+
+.courses .table-data .title {
+  width: 55%;
+}
+
+.courses .table-data .code {
+  width: 20%;
+}
+
+.courses .table-data .action {
+  width: 20%;
+}
 /*# sourceMappingURL=style.css.map */
