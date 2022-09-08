@@ -70,7 +70,7 @@ if (isset($_POST['submit_course'])) {
   $stmtCourse = $pdo->prepare($queryCourse);
   if ($stmtCourse->execute($courseData)) {
     messageNotif('success', 'New course added');
-    header('location: ' . ROOT_URL . 'admin/index.php?page=manage-course');
+    echo "<script>window.location.href='" . ROOT_URL . "admin/index.php?page=manage-course';</script>";
   } else {
     messageNotif('success', 'New course added');
     header('location: ' . ROOT_URL . 'admin/index.php?page=manage-course');
