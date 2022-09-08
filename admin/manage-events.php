@@ -20,9 +20,6 @@ $events = fetchAllEvent($pdo);
       <div class="column photo">Event Photo</div>
       <div class="column action head">Action</div>
     </div>
-    <?php foreach ($courses as $course) : ?>
-
-    <?php endforeach ?>
     <?php
     $num = 0;
     foreach ($events as $event) : $num++; ?>
