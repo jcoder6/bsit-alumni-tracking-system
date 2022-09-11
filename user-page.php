@@ -26,6 +26,23 @@ isEditOpen($acct, $bio, $educ, $employ, $pdo, $conn);
   <a href="<?= ROOT_URL ?>log-out.php"><button class="button2 user-sidebar-btn">Log out</button></a>
 </div>
 
+<div class="manage-account-container">
+  <div class="edit-image">
+    <h4 class="section-title">Upload New Image</h4>
+    <div class="user-profile">
+      <img src="./assets/images/no-img.PNG" alt="USER IMAGE">
+    </div>
+    <form class="upload-form" action="#" method="post">
+      <label for="avatar">Choose a profile picture:</label>
+      <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+      <input type="submit" value="Upload profile" class="button1 upload-img">
+    </form>
+  </div>
+  <div class="edit-acct">
+    <h4 class="section-title">Change Password</h4>
+  </div>
+</div>
+
 <div class="user-info-container">
   <div class="user-info">
     <h2 class="info-title">Biographical Information</h2>
