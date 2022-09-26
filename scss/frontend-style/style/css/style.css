@@ -1,7 +1,8 @@
 *, *::before, *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 html {
@@ -24,12 +25,14 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background-color: rgba(51, 126, 211, 0.7);
+  -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
 }
 
 ::-webkit-scrollbar-thumb :hover {
   background-color: #337ED3;
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .scroll-lock {
@@ -61,9 +64,16 @@ ul > a > li {
   top: 7rem;
   left: 22rem;
   right: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .content-container {
@@ -100,9 +110,12 @@ ul > a > li {
   color: white;
   font-size: 1.3rem;
   border-radius: 10px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  transform: translate(120%);
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  -webkit-transform: translate(120%);
+          transform: translate(120%);
   opacity: 0;
+  -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
   text-align: center;
   min-width: 25vw;
@@ -110,7 +123,8 @@ ul > a > li {
 
 .message-active {
   opacity: 1;
-  transform: translate(0);
+  -webkit-transform: translate(0);
+          transform: translate(0);
 }
 
 .button1 {
@@ -120,6 +134,7 @@ ul > a > li {
   border: none;
   border-radius: 5px;
   border: 1px solid #337ED3;
+  -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
   cursor: pointer;
 }
@@ -136,6 +151,7 @@ ul > a > li {
   border: none;
   border-radius: 5px;
   border: 1px solid #337ED3;
+  -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
   font-weight: bold;
   cursor: pointer;
@@ -153,6 +169,7 @@ ul > a > li {
   border: none;
   border-radius: 5px;
   border: 1px solid #FFDD00;
+  -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
   font-weight: bold;
   cursor: pointer;
@@ -163,8 +180,13 @@ ul > a > li {
 }
 
 .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .form-group .label-name {
@@ -196,6 +218,8 @@ ul > a > li {
 }
 
 .infor {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-bottom: 1.3rem;
 }
@@ -224,18 +248,29 @@ ul > a > li {
   background-color: #337ED3;
   color: #FFFFFF;
   padding: 1rem 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: fixed;
   width: 100%;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
   z-index: 4;
 }
 
 .navbar .logo-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .navbar .logo-section .project-name {
@@ -259,6 +294,8 @@ ul > a > li {
 }
 
 .navbar .menu-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 1rem;
 }
@@ -271,7 +308,9 @@ ul > a > li {
   border-bottom: 5px solid rgba(0, 0, 0, 0);
   border-top: 10px solid rgba(0, 0, 0, 0);
   padding: 2px;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
 }
 
@@ -310,7 +349,8 @@ ul > a > li {
   text-align: center;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .main-page .main-page-content .psu {
@@ -352,9 +392,15 @@ ul > a > li {
 }
 
 .footer .logo-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .footer .logo-section .project-name {
@@ -385,9 +431,15 @@ ul > a > li {
 }
 
 .footer .contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -396,6 +448,7 @@ ul > a > li {
   font-size: 1.5rem;
   color: #FFFFFF;
   list-style-type: none;
+  -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
 }
 
@@ -404,6 +457,8 @@ ul > a > li {
 }
 
 .event-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 100%;
   position: relative;
@@ -459,9 +514,15 @@ ul > a > li {
   width: 80%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .event-container .event-detail-container .detail-container .event-title {
@@ -509,6 +570,7 @@ ul > a > li {
   border: 2px solid #337ED3;
   font-weight: bold;
   border-radius: 10px;
+  -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
 }
 
@@ -521,8 +583,12 @@ ul > a > li {
 }
 
 .registration-modal-container .registration-head, .createAcct-modal-container .registration-head, .registerSuccess-modal-container .registration-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
   border-bottom: 2px solid #337ED3;
@@ -534,7 +600,8 @@ ul > a > li {
   width: 53%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -205%);
+  -webkit-transform: translate(-50%, -205%);
+          transform: translate(-50%, -205%);
   border-radius: 20px 0 0 0;
 }
 
@@ -565,6 +632,7 @@ ul > a > li {
   right: 1.5rem;
   font-size: 1.5rem;
   color: rgba(61, 61, 61, 0.5);
+  -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
   cursor: pointer;
 }
@@ -581,10 +649,12 @@ ul > a > li {
   background-color: #FFFFFF;
   position: fixed;
   border-radius: 30px 0 0 30px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   overflow-y: scroll;
 }
 
@@ -598,12 +668,14 @@ ul > a > li {
 
 .registration-modal-container .register-form-container::-webkit-scrollbar-thumb, .createAcct-modal-container .register-form-container::-webkit-scrollbar-thumb, .registerSuccess-modal-container .register-form-container::-webkit-scrollbar-thumb {
   background-color: rgba(51, 126, 211, 0.7);
+  -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
 }
 
 .registration-modal-container .register-form-container::-webkit-scrollbar-thumb:hover, .createAcct-modal-container .register-form-container::-webkit-scrollbar-thumb:hover, .registerSuccess-modal-container .register-form-container::-webkit-scrollbar-thumb:hover {
   background-color: #337ED3;
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .registration-modal-container .register-form-container .registration-forms .form-title, .createAcct-modal-container .register-form-container .registration-forms .form-title, .registerSuccess-modal-container .register-form-container .registration-forms .form-title {
@@ -615,8 +687,13 @@ ul > a > li {
 
 .registration-modal-container .register-form-container .registration-forms .bio-info, .registration-modal-container .register-form-container .registration-forms .educ-info, .registration-modal-container .register-form-container .registration-forms .employ-info, .registration-modal-container .register-form-container .registration-forms .acct-info, .createAcct-modal-container .register-form-container .registration-forms .bio-info, .createAcct-modal-container .register-form-container .registration-forms .educ-info, .createAcct-modal-container .register-form-container .registration-forms .employ-info, .createAcct-modal-container .register-form-container .registration-forms .acct-info, .registerSuccess-modal-container .register-form-container .registration-forms .bio-info, .registerSuccess-modal-container .register-form-container .registration-forms .educ-info, .registerSuccess-modal-container .register-form-container .registration-forms .employ-info, .registerSuccess-modal-container .register-form-container .registration-forms .acct-info {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border-bottom: 1px solid #337ED3;
   margin-bottom: 2rem;
   padding: 0 1rem;
@@ -627,14 +704,23 @@ ul > a > li {
 }
 
 .registration-modal-container .register-form-container .registration-forms .form-groups, .createAcct-modal-container .register-form-container .registration-forms .form-groups, .registerSuccess-modal-container .register-form-container .registration-forms .form-groups {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 1rem;
 }
 
 .registration-modal-container .register-form-container .registration-forms .form-groups .form-group, .createAcct-modal-container .register-form-container .registration-forms .form-groups .form-group, .registerSuccess-modal-container .register-form-container .registration-forms .form-groups .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .registration-modal-container .register-form-container .registration-forms .form-groups .form-group .label-name, .createAcct-modal-container .register-form-container .registration-forms .form-groups .form-group .label-name, .registerSuccess-modal-container .register-form-container .registration-forms .form-groups .form-group .label-name {
@@ -679,12 +765,15 @@ ul > a > li {
 }
 
 .registration-modal-container .register-form-container .registration-forms .person, .createAcct-modal-container .register-form-container .registration-forms .person, .registerSuccess-modal-container .register-form-container .registration-forms .person {
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   gap: 3rem;
 }
 
 .registration-modal-container .register-form-container .registration-forms .register-next, .createAcct-modal-container .register-form-container .registration-forms .register-next, .registerSuccess-modal-container .register-form-container .registration-forms .register-next {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   margin-right: 1rem;
   margin-bottom: 1rem;
 }
@@ -704,6 +793,8 @@ ul > a > li {
 }
 
 .registration-modal-container .register-form-container .registration-forms .employ-info .form-groups .is-employed, .createAcct-modal-container .register-form-container .registration-forms .employ-info .form-groups .is-employed, .registerSuccess-modal-container .register-form-container .registration-forms .employ-info .form-groups .is-employed {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
 }
@@ -734,15 +825,19 @@ ul > a > li {
 
 .registration-modal-container .register-form-container .registration-forms .register-btn, .createAcct-modal-container .register-form-container .registration-forms .register-btn, .registerSuccess-modal-container .register-form-container .registration-forms .register-btn {
   margin: 2rem 0;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .registration-modal-container .register-form-container .registration-forms a, .createAcct-modal-container .register-form-container .registration-forms a, .registerSuccess-modal-container .register-form-container .registration-forms a {
   margin: 2rem 0;
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .message-modal-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 2rem;
   margin-top: 9rem;
@@ -766,8 +861,13 @@ ul > a > li {
 .message-modal-container .congrats-message-container {
   width: 100%;
   padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .message-modal-container .congrats-message-container .cm {
@@ -782,7 +882,8 @@ ul > a > li {
 }
 
 .message-modal-container .congrats-message-container a {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   margin-right: 2rem;
   margin-top: auto;
 }
@@ -801,13 +902,15 @@ ul > a > li {
   padding: .5rem 1rem;
   background-color: #FFFFFF;
   border-radius: 20px;
-  box-shadow: 5px -5px 15px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 5px -5px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px -5px 15px rgba(0, 0, 0, 0.3);
   width: 30vw;
   height: 70vh;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .login-modal-container .login-container .login-head {
@@ -845,8 +948,13 @@ ul > a > li {
 
 .login-modal-container .login-container .login-form {
   padding: 0 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .login-modal-container .login-container .login-form .label-name {
@@ -871,6 +979,7 @@ ul > a > li {
   right: 1.5rem;
   font-size: 1.5rem;
   color: rgba(61, 61, 61, 0.5);
+  -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
   cursor: pointer;
 }
@@ -890,15 +999,21 @@ login-modal-open {
   background-color: #FFFFFF;
   padding: 1rem;
   border-radius: 20px;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
   max-width: 1440px;
 }
 
 .about-container .core-values-container {
   padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   margin-bottom: 2rem;
 }
 
@@ -979,8 +1094,12 @@ login-modal-open {
   border: 1px solid #337ED3;
   padding: 2rem;
   margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .about-container .developers-container .ct {
@@ -993,11 +1112,19 @@ login-modal-open {
   background: linear-gradient(313deg, rgba(255, 221, 0, 0.700718) 0%, rgba(51, 126, 211, 0.9052) 100%);
   width: 21%;
   padding: 1.5rem .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   border-radius: 10px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .about-container .developers-container .img-container {
@@ -1024,6 +1151,8 @@ login-modal-open {
 }
 
 .about-container .developers-container .dev-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: .8rem;
   margin-top: 1rem;
@@ -1032,6 +1161,7 @@ login-modal-open {
 .about-container .developers-container .dev-links a {
   font-size: 1.5rem;
   color: #FFFFFF;
+  -webkit-transition: all 250ms ease-in-out;
   transition: all 250ms ease-in-out;
 }
 
@@ -1051,7 +1181,8 @@ login-modal-open {
   width: 100%;
   border-radius: 30px;
   overflow: hidden;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
   margin-bottom: 3rem;
 }
 
@@ -1086,29 +1217,46 @@ login-modal-open {
 }
 
 .alumni-container .alumnae {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 2rem 1rem;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .alumni-container .alumnae .alumni {
   background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 49%;
   min-height: 18rem;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .alumni-container .alumnae .alumni .photo-name-container {
   background-color: rgba(255, 221, 0, 0.5);
   padding: 1rem .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 35%;
 }
 
@@ -1154,10 +1302,17 @@ login-modal-open {
   width: 30vw;
   position: fixed;
   background-color: rgba(255, 221, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   padding: 9rem 1rem 5rem;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .user-sidebar .user-img-container {
@@ -1181,12 +1336,16 @@ login-modal-open {
 }
 
 .user-sidebar a {
-  align-self: stretch;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
   padding: 0 4rem;
 }
 
 .user-sidebar .user-sidebar-btn {
-  align-self: stretch;
+  -ms-flex-item-align: stretch;
+      -ms-grid-row-align: stretch;
+      align-self: stretch;
   width: 100%;
   margin-bottom: .5rem;
 }
@@ -1200,11 +1359,17 @@ login-modal-open {
   z-index: 5;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: .5rem;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .manage-account-container .edit-image, .manage-account-container .edit-acct {
@@ -1218,13 +1383,20 @@ login-modal-open {
 .manage-account-container .edit-image .section-title, .manage-account-container .edit-acct .section-title {
   font-size: 1rem;
   border-bottom: 2px solid #FFDD00;
-  align-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
   padding: 0 1rem;
 }
 
 .manage-account-container .edit-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .manage-account-container .edit-image .user-profile {
@@ -1245,7 +1417,8 @@ login-modal-open {
 }
 
 .manage-account-container .edit-image .upload-form {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .manage-account-container .edit-image .upload-form label {
@@ -1257,7 +1430,29 @@ login-modal-open {
 }
 
 .manage-account-container .edit-acct {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.manage-account-container .edit-acct .changePass-form-container {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.manage-account-container .edit-acct .changePass-form-container .form-groups {
+  margin-bottom: 1.5rem;
+}
+
+.manage-account-container .edit-acct .changePass-form-container .form-groups .label-name {
+  text-align: left;
 }
 
 .user-info-container {
@@ -1270,8 +1465,13 @@ login-modal-open {
 
 .user-info-container .user-info {
   padding: 2rem 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border-bottom: 3px solid #FFDD00;
 }
 
@@ -1294,7 +1494,8 @@ login-modal-open {
 }
 
 .user-info-container a {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   margin-right: 4rem;
 }
 
@@ -1306,9 +1507,13 @@ login-modal-open {
 }
 
 .view-event-container .img-title-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 3rem;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 3rem;
 }
 
@@ -1319,7 +1524,8 @@ login-modal-open {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .view-event-container .img-title-container .event-img-container img {

@@ -38,8 +38,35 @@ isEditOpen($acct, $bio, $educ, $employ, $pdo, $conn);
       <input type="submit" value="Upload profile" class="button1 upload-img">
     </form>
   </div>
+
   <div class="edit-acct">
     <h4 class="section-title">Change Password</h4>
+    <div class="changePass-form-container">
+      <div class="changePass-forms">
+        <form action="#" method="POST" class="acct-info">
+          <div class="form-groups">
+            <div class="form-group curr_password">
+              <label class="label-name" for="curr_password">Current Password</label>
+              <input type="text" name="curr_password" class="input curr_password-input" placeholder="Current Password" required>
+            </div>
+          </div>
+          <div class="form-groups">
+            <div class="form-group new_password">
+              <label class="label-name" for="new_password">New Password</label>
+              <input type="new_password" name="new_password" class="input new_password-input" placeholder="New Password" required>
+            </div>
+          </div>
+          <div class="form-groups">
+            <div class="form-group cpassword">
+              <label class="label-name" for="cpassword">Confirm Password</label>
+              <input type="password" name="cpassword" class="input password-input" placeholder="Confirm Password" required>
+            </div>
+          </div>
+
+          <input type="submit" name="create_account" value="Register" class="button1 register-btn">
+        </form>
+    </div>
+</div>
   </div>
 </div>
 
