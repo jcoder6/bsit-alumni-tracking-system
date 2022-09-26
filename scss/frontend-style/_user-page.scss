@@ -106,6 +106,22 @@
 
   .edit-acct {
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .changePass-form-container {
+      // border: 1px solid red;
+      margin-top: 2rem;
+      width: 100%;
+
+      .form-groups {
+        margin-bottom: 1.5rem;
+
+        .label-name {
+          text-align: left; 
+        }
+      }
+    }
   }
 }
 
