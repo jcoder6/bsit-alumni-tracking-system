@@ -47,13 +47,13 @@ isEditOpen($acct, $bio, $educ, $employ, $pdo, $conn);
           <div class="form-groups">
             <div class="form-group curr_password">
               <label class="label-name" for="curr_password">Current Password</label>
-              <input type="text" name="curr_password" class="input curr_password-input" placeholder="Current Password" required>
+              <input type="password" name="curr_password" class="input curr_password-input" placeholder="Current Password" required>
             </div>
           </div>
           <div class="form-groups">
             <div class="form-group new_password">
               <label class="label-name" for="new_password">New Password</label>
-              <input type="new_password" name="new_password" class="input new_password-input" placeholder="New Password" required>
+              <input type="password" name="new_password" class="input new_password-input" placeholder="New Password" required>
             </div>
           </div>
           <div class="form-groups">
@@ -62,12 +62,18 @@ isEditOpen($acct, $bio, $educ, $employ, $pdo, $conn);
               <input type="password" name="cpassword" class="input password-input" placeholder="Confirm Password" required>
             </div>
           </div>
-
-          <input type="submit" name="create_account" value="Register" class="button1 register-btn">
+          <input type="submit" name="changePassBtn" value="Change Password" class="button1 register-btn">
         </form>
+      </div>
     </div>
-</div>
   </div>
+
+  <?php
+    //IF CHANGE PASSWORD IS CLICKED
+    if(isset($_POST['changePassBtn'])){
+      changePassword($conn, $pdo);
+    }
+  ?>
 </div>
 
 <div class="user-info-container">
@@ -223,6 +229,56 @@ function isEditOpen($acct, $bio, $educ, $employ, $pdo, $conn) {
         <?php include('./front-partials/user-edit/edit-employ.php'); ?>
       </section>
 <?php endif;
+  }
+}
+
+// CHANGE PASSWORD
+function changePassword($conn, $pdo) {
+  
+  $currPass = mysqli_real_escape_string($conn, md5($_POST['curr_password']));
+  $newPass = mysqli_real_escape_string($conn, md5($_POST['new_password']));
+  $confirmPass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
+  // echo $currPass . ' ' . $newPass . ' ' . $confirmPass;
+
+//VERIFY IS THERE HAS A USER
+if(isset($_GET['user'])) {
+  $id = $_GET['user'];
+} else {
+  echo 'something went wrong!';
+}
+
+  //FETCH THE CURRENT PASSWORD OF THE USER
+  $query = "SELECT password FROM users WHERE id = $id";
+  $stmt = $pdo->prepare($query);
+  $stmt->execute();
+  $res = $stmt->fetchObject();
+  $currentPassword = $res->password;
+
+  if($currPass == $currentPassword) {
+    // echo 'Pass';
+    if($newPass == $confirmPass) {
+      // echo 'new pass match';
+      $updatePassQuery = "UPDATE user SET password = ? WHERE id = ?";
+      $updatePassStmt = $pdo->prepare($updatePassQuery);
+
+      try {
+        $updatePassQuery = "UPDATE users SET password = :newPass WHERE id = :id";
+        $updatePassStmt = $pdo->prepare($updatePassQuery);
+        if($updatePassStmt->execute(['newPass' => $newPass, 'id' => $id])){
+          messageNotif('success', 'Password Change Successfully');
+        echo "<script>window.location.href='" . ROOT_URL . "index.php';</script>";
+
+        }
+      } catch(PDOException $e) {
+        echo $e;
+      }
+    } else {
+      messageNotif('error', 'New Password Not Match');
+      echo "<script>window.location.href='" . ROOT_URL . "user-page.php?user=" . $id . "';</script>"; 
+    }
+  } else {
+    messageNotif('error', 'Password Not Match');
+    echo "<script>window.location.href='" . ROOT_URL . "user-page.php?user=" . $id . "';</script>"; 
   }
 }
 ?>
