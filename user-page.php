@@ -8,6 +8,7 @@ $acct = fetchUserData($acctQuery, $pdo);
 $bio = fetchUserData($bioQuery, $pdo);
 $educ = fetchUserData($educQuery, $pdo);
 $employ = fetchUserData($employQuery, $pdo);
+$userImg = getUserImage($pdo);
 
 //FOR EDIT MODALS
 isEditOpen($acct, $bio, $educ, $employ, $pdo, $conn);
@@ -15,7 +16,7 @@ isEditOpen($acct, $bio, $educ, $employ, $pdo, $conn);
 
 <div class="user-sidebar">
   <div class="user-img-container">
-    <img src="./assets/images/no-img.PNG" alt="USER IMAGE">
+    <img src="./assets/images/profiles/<?= $userImg ?>" alt="USER IMAGE">
   </div>
 
   <h3 class="user-fullname">
@@ -30,13 +31,22 @@ isEditOpen($acct, $bio, $educ, $employ, $pdo, $conn);
   <div class="edit-image">
     <h4 class="section-title">Upload New Image</h4>
     <div class="user-profile">
-      <img src="./assets/images/no-img.PNG" alt="USER IMAGE">
+      <img src="./assets/images/profiles/<?= $userImg ?>" alt="USER IMAGE">
     </div>
-    <form class="upload-form" action="#" method="post">
+    <form class="upload-form" action="" method="post" enctype="multipart/form-data">
       <label for="avatar">Choose a profile picture:</label>
       <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
-      <input type="submit" value="Upload profile" class="button1 upload-img">
+      <input type="submit" name="upload_img" value="Upload profile" class="button1 upload-img">
     </form>
+
+    <!-- UPLOAD IMGAGE FUNCTION -->
+    <?php
+      if(isset($_FILES['avatar']['name'])){
+        uploadNewProfile($conn, $pdo);
+      } else {
+        messageNotif('error', 'something went wrong'); 
+      }
+    ?>
   </div>
 
   <div class="edit-acct">
@@ -280,5 +290,65 @@ if(isset($_GET['user'])) {
     messageNotif('error', 'Password Not Match');
     echo "<script>window.location.href='" . ROOT_URL . "user-page.php?user=" . $id . "';</script>"; 
   }
+}
+
+// UPLOAD NEW PROFILE
+function uploadNewProfile($conn, $pdo) {
+  // echo "New Prolfile";
+  //GET THE IMAGE NAME TO THE INPUT
+  $imgName = mysqli_real_escape_string($conn, $_FILES['avatar']['name']);
+  // echo $imgName;  
+  //CHECK IF THERE HAS AN IMAGE SELECTED 
+  if($imgName != "") {
+    // echo $imgName;
+    #RENAME THE IMAGE 
+    $newImageName = renameImg($imgName, 'USER_AVATAR');
+    // echo $newImageName;
+    # UPLOAD THE IMAGE INTO THE FILE FOLDER WITH 3 STEPS
+    # 1. GET THE IMAGE SOURCE PATH
+    $sourcePath = $_FILES['avatar']['tmp_name'];
+    # 2. SET THE DESTINATION PATH FOR THE IMAGE
+    $destinationPath = './assets/images/profiles/' . $newImageName;
+    # 3. UPLOAD THE IMAGE
+    if(!move_uploaded_file($sourcePath, $destinationPath)) {
+        echo 'got here';
+        messageNotif('error', 'Something went wrong');
+        header('location:' . ROOT_URL . 'admin/index.php?page=add-events');
+        die();
+    } else {
+      $updateImgDB = [
+        'user_img' => $newImageName,
+        'id' => $_GET['user']
+      ];
+      $query = "UPDATE users SET user_img = :user_img WHERE id = :id";
+      $stmt = $pdo->prepare($query);
+      $stmt->execute($updateImgDB);
+      messageNotif('success', 'Profile Updated');
+      echo "<script>window.location.href='" . ROOT_URL . "user-page.php?user=" . $_GET['user'] . "';</script>"; 
+
+    }
+  } else {
+    messageNotif('error', 'No Image Selected');
+    echo "<script>window.location.href='" . ROOT_URL . "user-page.php?user=" . $_GET['user'] . "';</script>"; 
+  }
+}
+
+function getUserImage($pdo) {
+  try{
+    $query = "SELECT user_img FROM users WHERE id = :id";
+    $stmt = $pdo->prepare($query);
+    if ($stmt->execute(['id' => $_GET['user']])) {
+      $res = $stmt->fetchObject();
+
+      if($res->user_img != "") {
+        return $res->user_img;
+      } else {
+        return 'no-img.PNG';
+      }
+    }
+  } catch (PDOException $e) {
+    echo $e;
+  }
+
 }
 ?>
