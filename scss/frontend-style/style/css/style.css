@@ -1350,6 +1350,21 @@ login-modal-open {
   margin-bottom: .5rem;
 }
 
+.manage-overflow {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100vh;
+  width: 100vw;
+  z-index: 5;
+  display: none;
+  opacity: 0;
+}
+
+.manage-overflow-open {
+  display: initial;
+  opacity: 1;
+}
+
 .manage-account-container {
   border-radius: 10px;
   position: fixed;
@@ -1363,13 +1378,32 @@ login-modal-open {
           transform: translate(-50%, -50%);
   -webkit-box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   padding: .5rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  opacity: 0;
+}
+
+.manage-account-container .ma-closeBtn {
+  position: absolute;
+  top: .8rem;
+  right: 1rem;
+  opacity: .5;
+  -webkit-transition: all 250ms ease-in-out;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+}
+
+.manage-account-container .ma-closeBtn:hover {
+  opacity: 1;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.manage-account-container .ma-closeBtn i {
+  font-size: 1.5rem;
 }
 
 .manage-account-container .edit-image, .manage-account-container .edit-acct {
@@ -1453,6 +1487,13 @@ login-modal-open {
 
 .manage-account-container .edit-acct .changePass-form-container .form-groups .label-name {
   text-align: left;
+}
+
+.ma-close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  opacity: 1;
 }
 
 .user-info-container {
