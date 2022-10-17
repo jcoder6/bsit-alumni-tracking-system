@@ -27,7 +27,9 @@ isEditOpen($acct, $bio, $educ, $employ, $pdo, $conn);
   <a href="<?= ROOT_URL ?>log-out.php"><button class="button2 user-sidebar-btn">Log out</button></a>
 </div>
 
+<div class="manage-overflow"></div>
 <div class="manage-account-container">
+  <span class="ma-closeBtn"><i class="fa-solid fa-xmark"></i></span>
   <div class="edit-image">
     <h4 class="section-title">Upload New Image</h4>
     <div class="user-profile">
@@ -43,8 +45,6 @@ isEditOpen($acct, $bio, $educ, $employ, $pdo, $conn);
     <?php
       if(isset($_FILES['avatar']['name'])){
         uploadNewProfile($conn, $pdo);
-      } else {
-        messageNotif('error', 'something went wrong'); 
       }
     ?>
   </div>
@@ -200,6 +200,25 @@ isEditOpen($acct, $bio, $educ, $employ, $pdo, $conn);
   } catch (e) {
     console.log(e);
   }
+
+  const macloseBtn = document.querySelector('.ma-closeBtn')
+  const manageAcctModal = document.querySelector('.manage-account-container');
+  const maOpenBtn = document.querySelector('.user-sidebar-btn');
+  const overflow = document.querySelector('.manage-overflow');
+  const body = document.querySelector('body');
+ 
+  console.log(overflow);
+  macloseBtn.addEventListener('click', () => {
+    manageAcctModal.classList.toggle('ma-close');
+    body.classList.toggle('scroll-lock');
+    overflow.classList.toggle('manage-overflow-open');
+  })
+
+  maOpenBtn.addEventListener('click', () => {
+    manageAcctModal.classList.add('ma-close');
+    body.classList.toggle('scroll-lock');
+    overflow.classList.toggle('manage-overflow-open');
+  })
 </script>
 <?php
 function setQueries() {
