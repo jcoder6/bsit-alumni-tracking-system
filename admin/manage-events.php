@@ -1,3 +1,7 @@
+<section class="view-alumni-modal-container" <?php isDeleteEvent() ?>>
+  <?php include('./delete-event.php'); ?>
+</section>
+
 <div class="manage-event">
   <h1 class="section-name">MANAGE EVENTS</h1>
 </div>
@@ -38,8 +42,8 @@ $events = fetchAllEvent($pdo);
           </div>
         </div>
         <div class="column action head">
-          <a class="alumni-action button-primary" href="#">View</a>
-          <a class="alumni-action button-danger" href="#">Delete</a>
+          <a class="alumni-action button-primary" href="<?= ROOT_URL ?>index.php?page=view-event&event=<?= $event['id']?>">View</a>
+          <a class="alumni-action button-danger" href="<?php ROOT_URL ?>index.php?page=manage-events&delete-event=<?= $event['id']?>">Delete</a>
         </div>
       </div>
     <?php endforeach; ?>
@@ -53,6 +57,12 @@ $events = fetchAllEvent($pdo);
         return $stmtEvent1->fetchAll(PDO::FETCH_ASSOC);
       } else {
         echo 'failed';
+      }
+    }
+
+    function isDeleteEvent() {
+      if(isset($_GET['delete-event'])){
+        echo 'style="opacity: 1; z-index: 5;"';
       }
     }
     ?>
