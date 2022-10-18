@@ -1,3 +1,7 @@
+<section class="view-alumni-modal-container" <?php isDeleteCourse() ?>>
+  <?php include('./delete-course.php'); ?>
+</section>
+
 <div class="course-list">
   <h1 class="section-name">COURSE LIST</h1>
 </div>
@@ -49,8 +53,7 @@
         <div class="column title"><?= $course->course_name ?></div>
         <div class="column code"><?= $course->course_code ?></div>
         <div class="column action head">
-          <a class="alumni-action button-primary" href="#">View</a>
-          <a class="alumni-action button-danger" href="#">Delete</a>
+          <a class="alumni-action button-danger" href="<?php ROOT_URL ?>index.php?page=manage-course&delete-course=<?= $course->id ?>">Delete</a>
         </div>
       </div>
     <?php endforeach; ?>
@@ -84,6 +87,12 @@ function fetchAllCourse($pdo) {
     return $stmt->fetchAll(PDO::FETCH_OBJ);
   } else {
     echo 'error fetch';
+  }
+}
+
+function isDeleteCourse() {
+  if (isset($_GET['delete-course'])) {
+    echo 'style="opacity: 1; z-index: 5;"';
   }
 }
 ?>
