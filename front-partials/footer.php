@@ -1,9 +1,13 @@
+<?php
+  $pageData = fetchPageData($pdo);
+?>
+
 <footer class="footer">
   <div class="logo-section">
     <div class="logo">
       <img src="./assets/images/Logo Psu.PNG" alt="LOGO">
     </div>
-    <span class="project-name">BSIT Alumni Tracking Management System</span>
+    <span class="project-name"><?= $pageData->page_name ?></span>
   </div>
 
   <p>Contact Us</p>
@@ -30,3 +34,19 @@
 </body>
 
 </html>
+
+<?php
+  function fetchPageData($pdo) {
+    try {
+      $query = "SELECT * FROM page WHERE id = 1";
+      $stmt = $pdo->prepare($query);
+      if($stmt->execute()) {
+        return $stmt->fetch(PDO::FETCH_OBJ);
+      } else {
+        echo 'database connection failed'; 
+      }
+    } catch (PDOException $e) {
+      echo $e;
+    }
+  } 
+?>
