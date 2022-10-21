@@ -44,7 +44,7 @@
           fr.readAsDataURL(file);
           })(event)">
       <div id="inputPhoto">No Image Choose</div>
-      <input type="submit" name="update_page" value="Add Event" class="button1 add-event-btn">
+      <input type="submit" name="update_page" value="Update Website" class="button1 add-event-btn">
     </div>
   </form>
 </div>  
@@ -63,5 +63,28 @@
       echo $e;
     }
   } 
+
+  if(isset($_POST['update_page'])){
+    $pageImg = mysqli_real_escape_string($conn, $_FILES['main_image']['name']);
+    $webData = [
+      'page_name' => mysqli_real_escape_string($conn, $_POST['page_name']),
+      'contact_no' => mysqli_real_escape_string($conn, $_POST['contact_number']),
+      'email' => mysqli_real_escape_string($conn, $_POST['page_email'])
+    ];
+
+    try {
+      $query = "UPDATE page SET page_name = :page_name, contact_no = :contact_no, page_email = :email WHERE id = 1";
+      $stmtUpdate = $pdo->prepare($query);
+      if($stmtUpdate->execute($webData)){
+        messageNotif('success', 'Page Updated');
+      echo "<script>window.location.href='" . ROOT_URL . "admin/index.php?page=manage-website" . "';</script>"; 
+      } else {
+        echo 'something went wrong';
+      }
+    } catch(PDOException $e) {
+      echo $e;
+    }   
+    
+  }
 ?>
 
