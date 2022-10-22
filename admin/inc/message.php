@@ -19,3 +19,22 @@ function renameImg($imageCurrentName, $imgCustomName) {
   $newName = $imgCustomName . '_' . rand(000, 999) . $ext;
   return $newName;
 }
+
+function deleteCurrentImg($imgName, $imgPath) {
+  $isImg = $imgName != 'Image is not currently available' && $imgName != '';
+  if ($isImg) {
+    if (file_exists($imgPath)) {
+      echo 'img-deleted';
+      unlink($imgPath);
+    } else {
+      echo 'file does not exist';
+    }
+  }
+}
+
+function uploadNewImage($sourcePath, $destinationPath, $pdo, $query, $data) {
+  if(move_uploaded_file($sourcePath, $destinationPath)) {
+    $stmt = $pdo->prepare($query);
+    $stmt->execute($data);
+  }
+}

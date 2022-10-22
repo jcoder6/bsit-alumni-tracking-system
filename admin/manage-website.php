@@ -73,18 +73,30 @@
     ];
 
     try {
+      //if the image need to be updated
+      if(!empty($pageImg)){
+        // IMAGE PATH IS HARD TO CONFIGURE MAKE SURE THAT YOU CONFIGURE IT RIGHT USING THE ROOT URL MIGHT BE NOT WORKED.
+        $imgPath = '.././assets/images/' . $pageData['page_img'];
+        $mainImgRename = renameImg($pageImg, 'MAIN_PHOTO');
+        deleteCurrentImg($pageImg, $imgPath);
+        $sourcePath = $_FILES['main_image']['tmp_name'];
+        $destinationPath = '.././assets/images/' . $mainImgRename;
+        $queryMainImg = "UPDATE page SET page_img = :page_img WHERE id = 1";
+        $imgData = ['page_img' => $mainImgRename];
+        uploadNewImage($sourcePath, $destinationPath, $pdo, $queryMainImg, $imgData);
+      }
+
       $query = "UPDATE page SET page_name = :page_name, contact_no = :contact_no, page_email = :email WHERE id = 1";
       $stmtUpdate = $pdo->prepare($query);
       if($stmtUpdate->execute($webData)){
         messageNotif('success', 'Page Updated');
-      echo "<script>window.location.href='" . ROOT_URL . "admin/index.php?page=manage-website" . "';</script>"; 
+        echo "<script>window.location.href='" . ROOT_URL . "admin/index.php?page=manage-website" . "';</script>"; 
       } else {
         echo 'something went wrong';
       }
     } catch(PDOException $e) {
       echo $e;
     }   
-    
   }
 ?>
 
