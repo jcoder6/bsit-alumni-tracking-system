@@ -31,7 +31,6 @@ $events = fetchAllEvent($pdo);
         </p>
         <div class="event-desc">
           <?= $event['description']; ?>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto blanditiis magni error dignissimos sed nemo nulla adipisci illo tenetur enim eius in omnis maxime unde recusandae, non labore incidunt aperiam quaerat iure nam eveniet fugiat qui! Officiis nam eaque laboriosam quidem iste expedita numquam cupiditate recusandae suscipit. Laudantium, dolor nulla.
         </div>
         <a class="button1 read-more" href="<?= ROOT_URL ?>index.php?page=view-event&event=<?= $event['id'] ?>">Read more</a>
       </div>
@@ -40,7 +39,8 @@ $events = fetchAllEvent($pdo);
 <?php endforeach; ?>
 <?php
 function fetchAllEvent($pdo) {
-  $queryEvent1 = "SELECT * FROM events";
+  $currDate = Date('Y-m-d');
+  $queryEvent1 = "SELECT * FROM events WHERE date > '$currDate'";
   $stmtEvent1 = $pdo->prepare($queryEvent1);
 
   if ($stmtEvent1->execute()) {

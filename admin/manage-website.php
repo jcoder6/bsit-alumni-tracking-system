@@ -75,7 +75,7 @@
     try {
       //if the image need to be updated
       if(!empty($pageImg)){
-        // IMAGE PATH IS HARD TO CONFIGURE MAKE SURE THAT YOU CONFIGURE IT RIGHT USING THE ROOT URL MIGHT BE NOT WORKED.
+        // IMAGE PATH IS HARD TO CONFIGURE MAKE SURE THAT YOU CONFIGURE IT RIGHT USING THE ROOT URL. MIGHT BE NOT WORKED.
         $imgPath = '.././assets/images/' . $pageData['page_img'];
         $mainImgRename = renameImg($pageImg, 'MAIN_PHOTO');
         deleteCurrentImg($pageImg, $imgPath);

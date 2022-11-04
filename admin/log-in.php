@@ -15,6 +15,7 @@
 
 <body>
   <?php
+  $img = fetchMainImg($pdo);
 
   if (isset($_SESSION['msg'])) {
     echo $_SESSION['msg'];
@@ -32,7 +33,7 @@
     </nav>
   </header>
   <div class="img-container">
-    <img src="../assets/images/main page photo.jpg" alt="hero img">
+    <img src="<?=  ROOT_URL ?>assets/images/<?= $img->page_img ?>" alt="hero img">
     <div class="overlay"></div>
   </div>
 
@@ -89,4 +90,18 @@ if (isset($_POST['submit'])) {
     header('location: ' . ROOT_URL . 'admin/index.php?page=dashboard');
   }
 }
+
+function fetchMainImg($pdo) {
+  try {
+    $query = "SELECT page_img FROM page WHERE id = 1";
+    $stmt = $pdo->prepare($query);
+    if($stmt->execute()) {
+      return $stmt->fetch(PDO::FETCH_OBJ);
+    } else {
+      echo 'database connection failed'; 
+    }
+  } catch (PDOException $e) {
+    echo $e;
+  }
+} 
 ?>

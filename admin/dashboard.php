@@ -76,11 +76,13 @@
   }
 
   function getUpComingEvents($pdo) {
-    $sql = "SELECT count(*) FROM events";
+    $currDate = Date('Y-m-d');
+    $sql = "SELECT count(*) FROM events WHERE date > '$currDate'";
     $result = $pdo->prepare($sql);
     $result->execute();
     return $result->fetchColumn();
   }
+  
   function getSalaryData($pdo) {
     $sql = "SELECT salary FROM employment WHERE employed = 'employed'";
     $stmt = $pdo->prepare($sql);

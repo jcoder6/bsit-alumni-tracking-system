@@ -43,14 +43,14 @@ $events = fetchAllEvent($pdo);
         </div>
         <div class="column action head">
           <a class="alumni-action button-primary" href="<?= ROOT_URL ?>index.php?page=view-event&event=<?= $event['id']?>">View</a>
-          <a class="alumni-action button-danger" href="<?php ROOT_URL ?>index.php?page=manage-events&delete-event=<?= $event['id']?>">Delete</a>
+          <a class="alumni-action button-danger" href="<?php ROOT_URL ?>index.php?page=manage-events&delete-event=<?= $event['id']?>&img=<?= $event['img'] ?>">Delete</a>
         </div>
       </div>
     <?php endforeach; ?>
 
     <?php
     function fetchAllEvent($pdo) {
-      $queryEvent1 = "SELECT * FROM events";
+      $queryEvent1 = "SELECT * FROM events ORDER BY date DESC";
       $stmtEvent1 = $pdo->prepare($queryEvent1);
 
       if ($stmtEvent1->execute()) {
