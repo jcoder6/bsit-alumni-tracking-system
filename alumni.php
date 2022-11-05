@@ -11,7 +11,7 @@
         <div class="alumni">
           <div class="photo-name-container">
             <div class="photo-container">
-              <img src="./assets/images/devs/shek.webp" alt="">
+              <img src="./assets/images/profiles/<?= $alumni['user_img'] ?>" alt="<?= $alumni['user_img'] ?>">
             </div>
 
             <h3 class="alumni-name">
@@ -59,7 +59,7 @@
   <?php
   function fetchAlumni($pdo) {
     $queryAlumni1 = "SELECT 
-                        u.id, b.firstname, b.lastname, e.batch, e.course, b.contactno, b.email, b.house, b.municipal, b.province 
+                        u.id, u.user_img, b.firstname, b.lastname, e.batch, e.course, b.contactno, b.email, b.house, b.municipal, b.province 
                       FROM users u
                       INNER JOIN bio b ON b.user_id = u.id
                       INNER JOIN educ e ON e.user_id = u.id

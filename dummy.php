@@ -1,4 +1,3 @@
 <?php
 
-echo $_GET['id'];
-echo $_GET['img'];
+echo md5(123);
