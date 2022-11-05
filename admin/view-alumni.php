@@ -7,7 +7,7 @@
 
   <div class="alumni-modal-content">
     <div class="alumni-img-container">
-      <img src="../assets/images/no-img.PNG" alt="ALUMNI">
+      <img src="../assets/images/profiles/<?= $resAlumni->user_img ?>" alt="<?= $resAlumni->user_img ?>">
     </div>
     <div class="alumni-info">
       <div class="infor">
@@ -67,7 +67,7 @@ if (isset($_POST['verify-account'])) {
 
 function fetchCurrentAlumni($pdo) {
   $vaID = $_GET['view-alumni'];
-  $queryView = "SELECT u.id, u.is_verified, b.firstname, b.lastname, b.email, e.batch, e.course, b.gender, em.employed FROM users u
+  $queryView = "SELECT u.id, u.user_img, u.is_verified, b.firstname, b.lastname, b.email, e.batch, e.course, b.gender, em.employed FROM users u
   JOIN bio b ON b.user_id = u.id
   JOIN educ e ON b.user_id = u.id 
   JOIN employment em ON b.user_id = u.id

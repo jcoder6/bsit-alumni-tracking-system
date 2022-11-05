@@ -32,7 +32,7 @@
         <div class="column no"><?= $no ?></div>
         <div class="column alumni-np">
           <div class="alumni-img-container">
-            <img src="../assets/images/no-img.PNG" alt="ALUMNI">
+            <img src="../assets/images/profiles/<?= $rs['user_img'] ?>" alt="<?= $rs['user_img'] ?>">
           </div>
           <h4 class="alumni-name"><?= $rs['firstname'] . ' ' . $rs['lastname'] ?></h4>
         </div>
@@ -49,7 +49,7 @@
 
 <?php
 function fetchAllAlumni($pdo) {
-  $queryAlumni = "SELECT u.id, b.firstname, b.lastname, e.course FROM users u
+  $queryAlumni = "SELECT u.id, u.user_img, b.firstname, b.lastname, e.course FROM users u
   JOIN bio b ON b.user_id = u.id 
   JOIN educ e ON e.user_id = u.id
   WHERE u.category = 1";

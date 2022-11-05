@@ -33,7 +33,7 @@ isEditOpen($acct, $bio, $educ, $employ, $pdo, $conn);
   <div class="edit-image">
     <h4 class="section-title">Upload New Image</h4>
     <div class="user-profile">
-      <img src="./assets/images/profiles/<?= $userImg ?>" alt="USER IMAGE">
+      <img src="./assets/images/profiles/<?= $userImg ?>" alt="<?= $userImg ?>">
     </div>
     <form class="upload-form" action="" method="post" enctype="multipart/form-data">
       <label for="avatar">Choose a profile picture:</label>
@@ -44,7 +44,7 @@ isEditOpen($acct, $bio, $educ, $employ, $pdo, $conn);
     <!-- UPLOAD IMGAGE FUNCTION -->
     <?php
       if(isset($_FILES['avatar']['name'])){
-        uploadNewProfile($conn, $pdo);
+        uploadNewProfile($conn, $pdo, $userImg);
       }
     ?>
   </div>
@@ -312,10 +312,13 @@ if(isset($_GET['user'])) {
 }
 
 // UPLOAD NEW PROFILE
-function uploadNewProfile($conn, $pdo) {
+function uploadNewProfile($conn, $pdo, $currImg) {
   // echo "New Prolfile";
   //GET THE IMAGE NAME TO THE INPUT
   $imgName = mysqli_real_escape_string($conn, $_FILES['avatar']['name']);
+  #BEFORE UPLOADING A NEW PHOTO WE NEED TO DELETE FIRST THE CURRENT PHOTO.
+  $imgPath = './assets/images/profiles/' . $currImg;
+  deleteCurrentImg($imgName, $imgPath);
   // echo $imgName;  
   //CHECK IF THERE HAS AN IMAGE SELECTED 
   if($imgName != "") {
