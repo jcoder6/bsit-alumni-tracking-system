@@ -21,6 +21,8 @@
         include('./manage-user.php');
       } else if ($page == 'manage-website') {
         include('./manage-website.php');
+      } else if ('add-gallery') {
+        include('./add-gallery.php'); 
       } else {
         include('./dashboard.php');
       }
