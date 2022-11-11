@@ -63,7 +63,8 @@
                       FROM users u
                       INNER JOIN bio b ON b.user_id = u.id
                       INNER JOIN educ e ON e.user_id = u.id
-                      WHERE category = 1 LIMIT 16";
+                      WHERE u.category = 1 AND u.is_verified = 1
+                      LIMIT 16";
     $stmtAlumni1 = $pdo->prepare($queryAlumni1);
 
     if ($stmtAlumni1->execute()) {
