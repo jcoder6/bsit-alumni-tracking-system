@@ -6,6 +6,10 @@
   <?php include('./reset-user-passoword.php'); ?>
 </section>
 
+<section class="view-alumni-modal-container" <?php isUnverified() ?>>
+  <?php include('./unverified-acct.php'); ?>
+</section>
+
 <?php $resAlumni = fetchAllAlumni($pdo); ?>
 
 <div class="manage-table alumni">
@@ -60,6 +64,12 @@ function fetchAllAlumni($pdo) {
 
 function isResetPassword() {
   if (isset($_GET['reset'])) {
+    echo 'style="opacity: 1; z-index: 5;"';
+  }
+}
+
+function isUnverified(){
+  if (isset($_GET['unverified'])) {
     echo 'style="opacity: 1; z-index: 5;"';
   }
 }
