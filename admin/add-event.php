@@ -5,7 +5,7 @@
 if (isset($_POST['add_event'])) {
   $eventTitle = mysqli_real_escape_string($conn, $_POST['event_name']);
   $eventDate = mysqli_real_escape_string($conn, $_POST['event_date']);
-  $eventDesc = mysqli_real_escape_string($conn, $_POST['event_desc']);
+  $eventDesc = $_POST['event_desc'];
   $eventPhoto = imgFunction($conn);
 
   // echo $eventTitle .

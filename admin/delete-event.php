@@ -1,6 +1,6 @@
 <div class="alumni-modal delete-modal">
   <div class="alumni-modal-head">
-    <h3>Course Information</h3>
+    <h3>Delete Event</h3>
   </div>
   <p class="del-msg">Are you sure? you want to delete this Event?</p>
   <div class="alumni-modal-foot">

@@ -1,5 +1,5 @@
 <section class="view-alumni-modal-container" <?php isDeleteGallery() ?>>
-  <?php include('./delete-event.php'); ?>
+  <?php include('./delete-gallery.php'); ?>
 </section>
 
 <div class="manage-event">
@@ -35,8 +35,8 @@
         </div>
       </div>
       <div class="column action head">
-        <a class="alumni-action button-primary" href="#">View</a>
-        <a class="alumni-action button-danger" href="#">Delete</a>
+        <a class="alumni-action button-primary" href="<?= ROOT_URL ?>admin/index.php?page=edit-gallery&edit=<?= $id ?>">Edit</a>
+        <a class="alumni-action button-danger" href="<?= ROOT_URL ?>admin/index.php?page=manage-gallery&delete-gallery=<?= $id ?>&img=<?= $gallery_img ?>">Delete</a>
       </div>
     </div>
     <?php $num++; endforeach; ?>
