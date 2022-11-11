@@ -22,7 +22,7 @@
       <div class="column date">Event Date</div>
       <div class="column photo">Event Photo</div>
       <div class="column action head">Action</div>
-    </div>
+  </div>
     <?php $num = 0; foreach ($events as $event) : $num++; ?>
     <div class="table-data">
       <div class="column no"><?= $num ?></div>
@@ -42,8 +42,6 @@
         <a class="alumni-action button-primary" href="<?= ROOT_URL ?>index.php?page=view-event&event=<?= $event['id']?>">View</a>
         <a class="alumni-action button-danger" href="<?php ROOT_URL ?>index.php?page=manage-events&delete-event=<?= $event['id']?>&img=<?= $event['img'] ?>">Delete</a>
       </div>
-    </div>
-  </div>
 </div>
     <?php endforeach; ?>
 

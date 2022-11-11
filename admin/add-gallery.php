@@ -33,7 +33,7 @@
           this.nextSibling.nextSibling.appendChild(img);
           };
           fr.readAsDataURL(file);
-          })(event)" required>
+          })(event)">
       <div id="inputPhoto">No Image Choose</div>
       <input type="submit" name="add_gallery" value="Add Event" class="button1 add-event-btn">
     </div>
@@ -46,10 +46,14 @@
       $imgName = mysqli_real_escape_string($conn, $_FILES['gal_photo']['name']);
       if($imgName != ""){
         $newImgName = renameImg($imgName, 'IMG_GALLERY');
+      } else {
+        messageNotif('error', 'Please Insert a Image');
+        echo "<script>window.location.href='" . ROOT_URL . "admin/index.php?page=add-gallery';</script>"; 
+        die();
       }
       $inputData = [
         'years' => mysqli_real_escape_string($conn, $_POST['gal_year']),
-        'descs' => mysqli_real_escape_string($conn, $_POST['gal_desc']), 
+        'descs' => $_POST['gal_desc'], 
         'img' => $newImgName
       ];
 
